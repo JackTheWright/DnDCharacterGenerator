@@ -117,11 +117,11 @@ USE_TZ = True
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-STATIC_ROOT = '/Users/jackwright/Desktop/generator/generatorhost/character/'
+STATIC_ROOT = '/Users/jackwright/Desktop/generator/generatorhost/static/character/'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    '/Users/jackwright/Desktop/generator/generatorhost/static',
+    '/Users/jackwright/Desktop/generator/generatorhost/static/',
 )
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
