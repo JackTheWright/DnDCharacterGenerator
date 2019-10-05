@@ -121,7 +121,7 @@ STATIC_ROOT = '/Users/jackwright/Desktop/generator/generatorhost/static/characte
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    '/Users/jackwright/Desktop/generator/generatorhost/static/',
+    '/Users/jackwright/Desktop/generator/generatorhost/static/character/',
 )
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
