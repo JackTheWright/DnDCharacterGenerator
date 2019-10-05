@@ -121,7 +121,7 @@ STATIC_ROOT = '/Users/jackwright/Desktop/generator/generatorhost/static/characte
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-     os.path.join(PROJECT_ROOT, 'static'),
+    'Users/jackwright/Desktop/generator/generatorhost/static'),
 )
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
