@@ -5,7 +5,7 @@ import math
 
 from . import race_names
 from . import skills as s
-import backgrounds
+from . import backgrounds
 
 
 CHARSHEET_PATH = 'charactersheet.pdf'
