@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.contrib.static.storage import staticfiles_storage
+from django.contrib.staticfiles.storage import staticfiles_storage
 from . import poppdf
 
 def character(request):
