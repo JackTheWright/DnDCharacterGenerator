@@ -14,5 +14,9 @@ def character(request):
     print(os.path.abspath('character.html'))
     print(os.path.abspath('newcharactersheet.pdf'))
     print(os.listdir("/app/static/character"))
-    return render(request, 'character.html', {})
+    return HttpResponse("character generated.")
+
+def download(request):
+        return render(request, 'character.html', {})
+
 # Create your views here.
