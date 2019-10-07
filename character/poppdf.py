@@ -8,7 +8,7 @@ from . import skills as s
 from . import backgrounds
 
 
-CHARSHEET_PATH = 'charactersheet.pdf'
+CHARSHEET_PATH = '/static/character/charactersheet.pdf'
 CHARSHEET_OUTPUT_PATH = 'newcharactersheet.pdf'
 
 
