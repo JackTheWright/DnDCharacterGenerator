@@ -10,5 +10,6 @@ def character(request):
     poppdf.write_fillable_pdf(url1,
                               url2,
                               poppdf.data_dict)
+    print(os.path.abspath('character.html'))
     return render(request, 'character.html', {})
 # Create your views here.
