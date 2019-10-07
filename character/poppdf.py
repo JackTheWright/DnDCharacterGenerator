@@ -8,8 +8,8 @@ from . import skills as s
 from . import backgrounds
 
 
-CHARSHEET_PATH = '/static/character/charactersheet.pdf'
-CHARSHEET_OUTPUT_PATH = 'newcharactersheet.pdf'
+# CHARSHEET_PATH = '/static/character/charactersheet.pdf'
+# CHARSHEET_OUTPUT_PATH = 'newcharactersheet.pdf'
 
 
 ANNOT_KEY = '/Annots'
