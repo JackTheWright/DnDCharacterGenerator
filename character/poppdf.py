@@ -332,6 +332,7 @@ def write_fillable_pdf(input_pdf_path, output_pdf_path, data_dict):
                     annotation.update(
                         pdfrw.PdfDict(V='{}'.format(data_dict[key]))
                     )
+    print(output_pdf_path)
     pdfrw.PdfWriter().write(output_pdf_path, template_pdf)
 
 data_dict = {
