@@ -3,13 +3,13 @@ import pdfrw
 import random
 import math
 
-import race_names
-import skills as s
-import backgrounds
+from . import race_names
+from . import skills as s
+from . import backgrounds
 
 
-CHARSHEET_PATH = 'static/charactersheet.pdf'
-CHARSHEET_OUTPUT_PATH = 'static/newcharactersheet.pdf'
+#CHARSHEET_PATH = 'static/charactersheet.pdf'
+#CHARSHEET_OUTPUT_PATH = 'static/newcharactersheet.pdf'
 
 
 ANNOT_KEY = '/Annots'
