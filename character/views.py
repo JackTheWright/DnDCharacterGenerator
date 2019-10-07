@@ -6,8 +6,8 @@ from django.contrib.staticfiles.finders import find
 from . import poppdf
 
 def character(request):
-    url1 = find('/character/charactersheet.pdf')
-    url2 = find('/character/newcharactersheet.pdf')
+    url1 = find('static/character/charactersheet.pdf')
+    url2 = find('static/character/newcharactersheet.pdf')
     poppdf.write_fillable_pdf(url1,
                               url2,
                               poppdf.data_dict)
