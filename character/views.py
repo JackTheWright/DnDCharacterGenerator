@@ -5,7 +5,7 @@ import os
 
 from . import poppdf
 
-def character(request):
+def generate(request):
     url1 = 'static/charactersheet.pdf'
     url2 = 'static/character/newcharactersheet.pdf'
     poppdf.write_fillable_pdf(url1,
