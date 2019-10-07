@@ -7,11 +7,12 @@ from . import poppdf
 
 def character(request):
     url1 = 'static/charactersheet.pdf'
-    url2 = 'newcharactersheet.pdf'
+    url2 = 'static/newcharactersheet.pdf'
     poppdf.write_fillable_pdf(url1,
                               url2,
                               poppdf.data_dict)
     print(os.path.abspath('character.html'))
     print(os.path.abspath('newcharactersheet.pdf'))
+    print(os.listdir("app"))
     return render(request, 'character.html', {})
 # Create your views here.
