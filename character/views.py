@@ -13,6 +13,6 @@ def character(request):
                               poppdf.data_dict)
     print(os.path.abspath('character.html'))
     print(os.path.abspath('newcharactersheet.pdf'))
-    print(os.listdir("/app/static/"))
+    print(os.listdir("/app/static/character"))
     return render(request, 'character.html', {})
 # Create your views here.
