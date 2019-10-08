@@ -123,7 +123,7 @@ def dictfiller():
         armor_c = weapons.armor_ac_arr[aind]
         acind = random.randint(0, len(armor_t)-1)
         armor = armor_t[acind]
-        armorclass = armor_ac_arr[acind]
+        armorclass = armor_c[acind]
 
         # shielf flag
         shield = random.randint(0,1)
@@ -174,7 +174,7 @@ def dictfiller():
         armor_c = weapons.armor_ac_arr[aind]
         acind = random.randint(0, len(armor_t)-1)
         armor = armor_t[acind]
-        armorclass = armor_ac_arr[acind]
+        armorclass = armor_c[acind]
 
         # weapon selection
         wind = random.randint(0, len(weapons.simple_weapons)-1)
@@ -209,7 +209,7 @@ def dictfiller():
         armor_c = weapons.armor_ac_arr[aind]
         acind = random.randint(0, len(armor_t)-1)
         armor = armor_t[acind]
-        armorclass = armor_ac_arr[acind]
+        armorclass = armor_c[acind]
 
         # shield flag
         shield = random.randint(0,1)
@@ -238,7 +238,7 @@ def dictfiller():
         armor_c = weapons.armor_ac_arr[aind]
         acind = random.randint(0, len(armor_t)-1)
         armor = armor_t[acind]
-        armorclass = armor_ac_arr[acind]
+        armorclass = armor_c[acind]
 
         # shielf flag
         shield = random.randint(0,1)
@@ -288,7 +288,7 @@ def dictfiller():
         armor_c = weapons.armor_ac_arr[aind]
         acind = random.randint(0, len(armor_t)-1)
         armor = armor_t[acind]
-        armorclass = armor_ac_arr[acind]
+        armorclass = armor_c[acind]
 
         # shielf flag
         shield = random.randint(0,1)
@@ -312,7 +312,7 @@ def dictfiller():
         armor_c = weapons.armor_ac_arr[aind]
         acind = random.randint(0, len(armor_t)-1)
         armor = armor_t[acind]
-        armorclass = armor_ac_arr[acind]
+        armorclass = armor_c[acind]
 
         # weapon selection
         wind = random.randint(0, len(weapons.martial_weapons)-1)
