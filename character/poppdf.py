@@ -319,7 +319,6 @@ def dictfiller():
     if '_' in backgrounders:
         ind = backgrounders.index('_')
         backgrounders[ind] = ' '
-    else:
     data_dict['Background'] = ''.join(backgrounders)
     ind = bg.backs.index(background)
 
