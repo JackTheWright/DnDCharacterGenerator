@@ -316,7 +316,7 @@ def dictfiller():
     randombgind = random.randint(0, bglen-1)
     background = bg.backs[randombgind]
     backgrounders = list(background)
-    if backgrounders.contains('_'):
+    if '_' in backgrounders:
         ind = backgrounders.index('_')
         backgrounders[ind] = ' '
         backgrounders = str(backgrounders)
