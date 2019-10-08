@@ -316,7 +316,7 @@ def dictfiller():
     randombgind = random.randint(0, bglen-1)
     background = bg.backs[randombgind]
     data_dict['Background'] = background
-    ind = bg.backs_arrs.index(background)
+    ind = bg.backs.index(background)
 
     data_dict['PersonalityTraits'] = bg.backs_arrs[ind][random.randint(0, 5)]
     data_dict['Ideals'] = bg.backs_arrs[ind][random.randint(6, 11)]
