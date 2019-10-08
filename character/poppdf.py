@@ -315,10 +315,18 @@ def dictfiller():
     bglen = len(bg.backs)
     randombgind = random.randint(0, bglen-1)
     background = bg.backs[randombgind]
-    data_dict['Background'] = background
+    if background.contains('_'):
+        backgrounders = background
+        tmplist = list(background)
+        ind = tmplist.index('_')
+        backgrounders[ind] = ' '
+        backgrounders = str(backgrounders)
+    else:
+        backgrounders = background
+    data_dict['Background'] = backgrounders
     ind = bg.backs.index(background)
 
-    data_dict['PersonalityTraits'] = bg.backs_arrs[ind][random.randint(0, 5)]
+    data_dict['PersonalityTraits '] = bg.backs_arrs[ind][random.randint(0, 5)]
     data_dict['Ideals'] = bg.backs_arrs[ind][random.randint(6, 11)]
     data_dict['Bonds'] = bg.backs_arrs[ind][random.randint(12, 17)]
     data_dict['Flaws'] = bg.backs_arrs[ind][random.randint(18, 23)]
