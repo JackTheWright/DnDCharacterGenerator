@@ -410,15 +410,15 @@ def dictfiller():
         data_dict['HPMax'] = str(level * 6 + (2 * level))
         proficiencies = 'Armor: Light\nWeapons: Very Simple'
 
-          #Weapon selection
-          wind = random.randint(0, len(weapons.simple_weapons)-1)
-          weapon = weapons.simple_weapons[ind]
-          dmg = weapons.simple_weapons_dmg[ind]
+        #Weapon selection
+        wind = random.randint(0, len(weapons.simple_weapons)-1)
+        weapon = weapons.simple_weapons[ind]
+        dmg = weapons.simple_weapons_dmg[ind]
 
-          # Armor selection
-          acind = random.randint(0, len(weapons.light_armor)-1)
-          armor = weapons.light_armor[acind]
-          armorclass = weapons.light_armor_ac[acind]
+        # Armor selection
+        acind = random.randint(0, len(weapons.light_armor)-1)
+        armor = weapons.light_armor[acind]
+        armorclass = weapons.light_armor_ac[acind]
 
         skill_rand_1 = random.randint(0, len(skills.wizard_skills)-1)
         skill.append(skills.wizard_skills[skill_rand_1])
