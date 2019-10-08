@@ -121,8 +121,8 @@ def dictfiller():
         aind = random.randint(0, 1)
         armor_t = weapons.armor_arr[aind]
         armor_c = weapons.armor_ac_arr[aind]
-        acind = random.randint(0, len(armor_type)-1)
-        armor = armor_type[acind]
+        acind = random.randint(0, len(armor_t)-1)
+        armor = armor_t[acind]
         armorclass = armor_class[acind]
 
         # shielf flag
@@ -172,8 +172,8 @@ def dictfiller():
         aind = random.randint(0, 1)
         armor_t = weapons.armor_arr[aind]
         armor_c = weapons.armor_ac_arr[aind]
-        acind = random.randint(0, len(armor_type)-1)
-        armor = armor_type[acind]
+        acind = random.randint(0, len(armor_t)-1)
+        armor = armor_t[acind]
         armorclass = armor_class[acind]
 
         # weapon selection
@@ -207,8 +207,8 @@ def dictfiller():
         aind = random.randint(0, 1)
         armor_t = weapons.armor_arr[aind]
         armor_c = weapons.armor_ac_arr[aind]
-        acind = random.randint(0, len(armor_type)-1)
-        armor = armor_type[acind]
+        acind = random.randint(0, len(armor_t)-1)
+        armor = armor_t[acind]
         armorclass = armor_class[acind]
 
         # shield flag
@@ -236,8 +236,8 @@ def dictfiller():
         aind = random.randint(0, 2)
         armor_t = weapons.armor_arr[aind]
         armor_c = weapons.armor_ac_arr[aind]
-        acind = random.randint(0, len(armor_type)-1)
-        armor = armor_type[acind]
+        acind = random.randint(0, len(armor_t)-1)
+        armor = armor_t[acind]
         armorclass = armor_class[acind]
 
         # shielf flag
@@ -286,8 +286,8 @@ def dictfiller():
         aind = random.randint(0, 2)
         armor_t = weapons.armor_arr[aind]
         armor_c = weapons.armor_ac_arr[aind]
-        acind = random.randint(0, len(armor_type)-1)
-        armor = armor_type[acind]
+        acind = random.randint(0, len(armor_t)-1)
+        armor = armor_t[acind]
         armorclass = armor_class[acind]
 
         # shielf flag
@@ -310,8 +310,8 @@ def dictfiller():
         aind = random.randint(0, 1)
         armor_t = weapons.armor_arr[aind]
         armor_c = weapons.armor_ac_arr[aind]
-        acind = random.randint(0, len(armor_type)-1)
-        armor = armor_type[acind]
+        acind = random.randint(0, len(armor_t)-1)
+        armor = armor_t[acind]
         armorclass = armor_class[acind]
 
         # weapon selection
