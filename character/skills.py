@@ -7,18 +7,18 @@ class skills:
     'Athletics',
     'Acrobatics',
     'SleightofHand',
-    'Stealth',
+    'Stealth ',
     'Arcana',
-    'History',
-    'Investigation',
+    'History ',
+    'Investigation ',
     'Nature',
     'Religion',
-    'AnimalHandling',
+    'Animal',
     'Insight',
     'Medicine',
-    'Perception',
+    'Perception ',
     'Survival',
-    'Deception',
+    'Deception ',
     'Intimidation',
     'Performance',
     'Persuasion'
@@ -30,44 +30,44 @@ class skills:
 
     Dexterity_skills = [
     'Acrobatics',
-    'Sleight of Hand',
-    'Stealth'
+    'SleightofHand',
+    'Stealth '
     ]
 
     Intelligence_skills = [
     'Arcana'
-    'History',
-    'Investigation',
+    'History ',
+    'Investigation ',
     'Nature',
     'Religion'
     ]
 
     Wisdom_skills = [
-    'Animal Handling',
+    'Animal',
     'Insight',
     'Medicine',
-    'Perception',
+    'Perception ',
     'Survival'
     ]
 
     Charisma_skills = [
-    'Deception',
+    'Deception ',
     'Intimidation',
     'Performance',
     'Persuasion'
     ]
 
     barb_skills = [
-    'AnimalHandling',
+    'Animal',
     'Athletics',
     'Intimidation',
     'Nature',
-    'Perception',
+    'Perception ',
     'Survival'
     ]
 
     cleric_skills = [
-    'History',
+    'History ',
     'Insight',
     'Medicine',
     'Persuasion',
@@ -76,33 +76,33 @@ class skills:
 
     druid_skills = [
     'Arcana',
-    'AnimalHandling',
+    'Animal',
     'Insight',
     'Medicine',
     'Nature',
-    'Perception',
+    'Perception ',
     'Religion',
     'Survival'
     ]
 
     fighter_skills = [
     'Acrobatics',
-    'Animal Handling',
+    'Animal',
     'Athletics',
-    'History',
+    'History ',
     'Insight',
     'Intimidation',
-    'Perception',
+    'Perception ',
     'Survival'
     ]
 
     monk_skills = [
     'Acrobatics',
     'Athletics',
-    'History',
+    'History ',
     'Insight',
     'Religion',
-    'Stealth'
+    'Stealth '
     ]
 
     paladin_skills = [
@@ -118,30 +118,30 @@ class skills:
     'AnimalHandling',
     'Athletics',
     'Insight',
-    'Investigation',
+    'Investigation ',
     'Nature',
-    'Perception',
-    'Stealth',
+    'Perception ',
+    'Stealth ',
     'Survival'
     ]
 
     rogue_skills = [
     'Acrobatics',
     'Athletics',
-    'Deception',
+    'Deception ',
     'Insight',
     'Intimidation',
-    'Investigation',
-    'Perception',
+    'Investigation ',
+    'Perception ',
     'Performance',
     'Persuasion',
     'SleightofHand',
-    'Stealth'
+    'Stealth '
     ]
 
     sorcerer_skills = [
     'Arcana',
-    'Deception',
+    'Deception ',
     'Insight',
     'Intimidation',
     'Persuasion',
@@ -150,19 +150,19 @@ class skills:
 
     warlock_skills = [
     'Arcana',
-    'Deception',
-    'History',
+    'Deception ',
+    'History ',
     'Intimidation',
-    'Investigation',
+    'Investigation ',
     'Nature',
     'Religion'
     ]
 
     wizard_skills = [
     'Arcana',
-    'History',
+    'History ',
     'Insight',
-    'Investigation',
+    'Investigation ',
     'Medicine',
     'Religion'
     ]
