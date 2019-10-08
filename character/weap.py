@@ -1,4 +1,4 @@
-class weapons_armor = {
+class weapons_armor():
 
     simple_weapons = {
         'club',
@@ -187,5 +187,3 @@ class weapons_armor = {
 
     armor_arr = {light_armor, medium_armor, heavy_armor}
     armor_ac_arr = {light_armor_ac, medium_armor_ac, heavy_armor_ac}
-
-}
