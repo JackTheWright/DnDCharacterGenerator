@@ -319,10 +319,8 @@ def dictfiller():
     if '_' in backgrounders:
         ind = backgrounders.index('_')
         backgrounders[ind] = ' '
-        backgrounders = str(backgrounders)
     else:
-        backgrounders = str(backgrounders)
-    data_dict['Background'] = str(backgrounders)
+    data_dict['Background'] = ''.join(backgrounders)
     ind = bg.backs.index(background)
 
     data_dict['PersonalityTraits '] = bg.backs_arrs[ind][random.randint(0, 5)]
