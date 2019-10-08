@@ -191,6 +191,8 @@ def dictfiller():
         skill_rand_2 = random.randint(0, len(skills.cleric_skills)-1)
         skill.append(skills.cleric_skills[skill_rand_2])
 
+        print(skills)
+
     elif charclass is 'druid':
         INT, WIS = 15, 14
         st1 = 'INT'
@@ -426,6 +428,7 @@ def dictfiller():
         skill_rand_2 = random.randint(0, len(skills.wizard_skills)-1)
         skill.append(skills.wizard_skills[skill_rand_2])
 
+    print(skills)
     print('\n', charclass, race, '\n')
 
     STR, DEX, CON, INT, WIS, CHA, features_traits = \
