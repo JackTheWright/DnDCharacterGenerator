@@ -114,8 +114,8 @@ def dictfiller():
 
         # weapon selection
         wind = random.randint(0, len(weapons.martial_weapons)-1)
-        weapon = weapons.martial_weapons[ind]
-        dmg = weapons.martial_weapons_dmg[ind]
+        weapon = weapons.martial_weapons[wind]
+        dmg = weapons.martial_weapons_dmg[wind]
 
         #armor selection
         aind = random.randint(0, 1)
@@ -143,8 +143,8 @@ def dictfiller():
 
         #Weapon selection
         wind = random.randint(0, len(weapons.bard_weapons)-1)
-        weapon = weapons.bard_weapons[ind]
-        dmg = weapons.bard_weapons_dmg[ind]
+        weapon = weapons.bard_weapons[wind]
+        dmg = weapons.bard_weapons_dmg[wind]
 
         # Armor selection
         acind = random.randint(0, len(weapons.light_armor)-1)
@@ -178,8 +178,8 @@ def dictfiller():
 
         # weapon selection
         wind = random.randint(0, len(weapons.simple_weapons)-1)
-        weapon = weapons.simple_weapons[ind]
-        dmg = weapons.simple_weapons_dmg[ind]
+        weapon = weapons.simple_weapons[wind]
+        dmg = weapons.simple_weapons_dmg[wind]
 
         # shield flag
         shield = random.randint(0,1)
@@ -200,8 +200,8 @@ def dictfiller():
 
         # weapon selectio
         wind = random.randint(0, len(weapons.druid_weapons)-1)
-        weapon = weapons.druid_weapons[ind]
-        dmg = weapons.druid_weapons_dmg[ind]
+        weapon = weapons.druid_weapons[wind]
+        dmg = weapons.druid_weapons_dmg[wind]
 
         # armor selection
         aind = random.randint(0, 1)
@@ -229,8 +229,8 @@ def dictfiller():
 
         # weapon selection
         wind = random.randint(0, len(weapons.martial_weapons)-1)
-        weapon = weapons.martial_weapons[ind]
-        dmg = weapons.martial_weapons_dmg[ind]
+        weapon = weapons.martial_weapons[wind]
+        dmg = weapons.martial_weapons_dmg[wind]
 
         #armor selection
         aind = random.randint(0, 2)
@@ -258,8 +258,8 @@ def dictfiller():
 
         # weapon selection
         wind = random.randint(0, len(weapons.monk_weapons)-1)
-        weapon = weapons.monk_weapons[ind]
-        dmg = weapons.monk_weapons_dmg[ind]
+        weapon = weapons.monk_weapons[wind]
+        dmg = weapons.monk_weapons_dmg[wind]
 
         armor = 'cloth'
         armorclass = '12'
@@ -279,8 +279,8 @@ def dictfiller():
 
         # weapon selection
         wind = random.randint(0, len(weapons.martial_weapons)-1)
-        weapon = weapons.martial_weapons[ind]
-        dmg = weapons.martial_weapons_dmg[ind]
+        weapon = weapons.martial_weapons[wind]
+        dmg = weapons.martial_weapons_dmg[wind]
 
         #armor selection
         aind = random.randint(0, 2)
@@ -316,8 +316,8 @@ def dictfiller():
 
         # weapon selection
         wind = random.randint(0, len(weapons.martial_weapons)-1)
-        weapon = weapons.martial_weapons[ind]
-        dmg = weapons.martial_weapons_dmg[ind]
+        weapon = weapons.martial_weapons[wind]
+        dmg = weapons.martial_weapons_dmg[wind]
 
         # shield flag
         shield = random.randint(0,1)
@@ -337,8 +337,8 @@ def dictfiller():
 
         #Weapon selection
         wind = random.randint(0, len(weapons.rogue_weapons)-1)
-        weapon = weapons.rogue_weapons[ind]
-        dmg = weapons.rogue_weapons_dmg[ind]
+        weapon = weapons.rogue_weapons[wind]
+        dmg = weapons.rogue_weapons_dmg[wind]
 
         # Armor selection
         acind = random.randint(0, len(weapons.light_armor)-1)
@@ -366,8 +366,8 @@ def dictfiller():
 
         #Weapon selection
         wind = random.randint(0, len(weapons.simple_weapons)-1)
-        weapon = weapons.simple_weapons[ind]
-        dmg = weapons.simple_weapons_dmg[ind]
+        weapon = weapons.simple_weapons[wind]
+        dmg = weapons.simple_weapons_dmg[wind]
 
         # Armor selection
         acind = random.randint(0, len(weapons.light_armor)-1)
@@ -389,8 +389,8 @@ def dictfiller():
 
         #Weapon selection
         wind = random.randint(0, len(weapons.simple_weapons)-1)
-        weapon = weapons.simple_weapons[ind]
-        dmg = weapons.simple_weapons_dmg[ind]
+        weapon = weapons.simple_weapons[wind]
+        dmg = weapons.simple_weapons_dmg[wind]
 
         # Armor selection
         acind = random.randint(0, len(weapons.light_armor)-1)
@@ -412,8 +412,8 @@ def dictfiller():
 
         #Weapon selection
         wind = random.randint(0, len(weapons.simple_weapons)-1)
-        weapon = weapons.simple_weapons[ind]
-        dmg = weapons.simple_weapons_dmg[ind]
+        weapon = weapons.simple_weapons[wind]
+        dmg = weapons.simple_weapons_dmg[wind]
 
         # Armor selection
         acind = random.randint(0, len(weapons.light_armor)-1)
