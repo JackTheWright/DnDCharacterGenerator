@@ -22,6 +22,7 @@ WIDGET_SUBTYPE_KEY = '/Widget'
 
 
 def dictfiller():
+    data_dict = {key: '' for key in data_dict}
     races = ['dwarf', 'elf', 'halfling', 'human', 'dragonborn', 'gnome',\
         'halfelf', 'halforc', 'tiefling', 'goliath']
     classes = ['barbarian', 'bard', 'cleric', 'druid', 'fighter', 'monk',\
