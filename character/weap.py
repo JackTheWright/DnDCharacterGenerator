@@ -1,6 +1,6 @@
 class weapons_armor():
 
-    simple_weapons = {
+    simple_weapons = [
         'club',
         'dagger',
         'greatclub',
@@ -15,7 +15,7 @@ class weapons_armor():
         'dart',
         'shortbow',
         'sling'
-    }
+    ]
 
     simple_weapons_dmg = [
         '1d4 b',
@@ -185,5 +185,5 @@ class weapons_armor():
         '18'
     ]
 
-    armor_arr = {light_armor, medium_armor, heavy_armor}
-    armor_ac_arr = {light_armor_ac, medium_armor_ac, heavy_armor_ac}
+    armor_arr = [light_armor, medium_armor, heavy_armor]
+    armor_ac_arr = [light_armor_ac, medium_armor_ac, heavy_armor_ac]
