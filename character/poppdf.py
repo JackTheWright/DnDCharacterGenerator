@@ -322,7 +322,7 @@ def dictfiller():
         backgrounders = str(backgrounders)
     else:
         backgrounders = str(backgrounders)
-    data_dict['Background'] = backgrounders
+    data_dict['Background'] = str(backgrounders)
     ind = bg.backs.index(background)
 
     data_dict['PersonalityTraits '] = bg.backs_arrs[ind][random.randint(0, 5)]
