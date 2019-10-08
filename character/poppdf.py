@@ -29,6 +29,8 @@ def dictfiller():
             'chaotic', 'chaotic', 'chaotic', 'lawful']
     level = 3
 
+    percepflag = 0
+
     STR = 0
     DEX = 0
     CON = 0
@@ -311,6 +313,12 @@ def dictfiller():
             data_dict[ability] = str(prof + int(skills.mod_get(WIS)))
         elif ability in skills.Charisma_skills:
             data_dict[ability] = str(prof + int(skills.mod_get(CHA)))
+        if ability is 'Perception':
+            data_dict['Passive'] = str(prof + int(skills.mod_get(WIS)))
+            percepflag = 1
+
+    if percepflag is 0:
+        data_dict['Passive'] = skills.mod_get(WIS)
 
     bglen = len(bg.backs)
     randombgind = random.randint(0, bglen-1)
