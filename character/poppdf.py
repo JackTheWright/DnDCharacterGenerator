@@ -429,7 +429,7 @@ def dictfiller():
 
     print('\n', charclass, race, '\n')
     print('\n', skill, '\n')
-    print('\n', st1, st2 '\n')
+    print('\n', st1, st2, '\n')
 
 
     STR, DEX, CON, INT, WIS, CHA, features_traits = \
