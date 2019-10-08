@@ -4,6 +4,6 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-        path('/generate/', views.generate, name='generate'),
+        path('generate/', views.generate, name='generate'),
         path('', views.download, name='download'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
