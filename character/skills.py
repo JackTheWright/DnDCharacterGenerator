@@ -9,7 +9,7 @@ class skills:
     'SleightofHand',
     'Stealth ',
     'Arcana',
-    'History ',
+    'History',
     'Investigation ',
     'Nature',
     'Religion',
@@ -36,7 +36,7 @@ class skills:
 
     Intelligence_skills = [
     'Arcana'
-    'History ',
+    'History',
     'Investigation ',
     'Nature',
     'Religion'
@@ -67,7 +67,7 @@ class skills:
     ]
 
     cleric_skills = [
-    'History ',
+    'History',
     'Insight',
     'Medicine',
     'Persuasion',
@@ -89,7 +89,7 @@ class skills:
     'Acrobatics',
     'Animal',
     'Athletics',
-    'History ',
+    'History',
     'Insight',
     'Intimidation',
     'Perception ',
@@ -99,7 +99,7 @@ class skills:
     monk_skills = [
     'Acrobatics',
     'Athletics',
-    'History ',
+    'History',
     'Insight',
     'Religion',
     'Stealth '
@@ -151,7 +151,7 @@ class skills:
     warlock_skills = [
     'Arcana',
     'Deception ',
-    'History ',
+    'History',
     'Intimidation',
     'Investigation ',
     'Nature',
@@ -160,7 +160,7 @@ class skills:
 
     wizard_skills = [
     'Arcana',
-    'History ',
+    'History',
     'Insight',
     'Investigation ',
     'Medicine',
