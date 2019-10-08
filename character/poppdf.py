@@ -460,8 +460,9 @@ def dictfiller():
     data_dict['AC'] = str(int(armorclass) + int(skills.mod_get(DEX)) + (2 * shield))
     data_dict['Equipment'] = armor
     data_dict['Wpn Name'] = weapon
+    data_dict['AttacksSpellcasting'] = weapon
     data_dict['Wpn1 Damage'] = dmg
-    data_dict['Wpn1 AtkBonus'] = str(prof + int(skills.mod_get(STR)))
+    data_dict['Wpn1 AtkBonus'] = '+' + str(prof + int(skills.mod_get(STR)))
 
     data_dict['Features and Traits'] = features_traits
     data_dict['ProficienciesLang'] = proficiencies
