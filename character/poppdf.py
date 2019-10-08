@@ -128,10 +128,10 @@ def dictfiller():
         # shielf flag
         shield = random.randint(0,1)
 
-        skill_rand_1 = random.randint(0, 5)
+        skill_rand_1 = random.randint(0, len(skills.barb_skills)-1)
         skill.append(skills.barb_skills[skill_rand_1])
         del skills.barb_skills[skill_rand_1]
-        skill_rand_2 = random.randint(0, 4)
+        skill_rand_2 = random.randint(0, len(skills.barb_skills)-1)
         skill.append(skills.barb_skills[skill_rand_2])
 
     elif charclass is 'bard':
