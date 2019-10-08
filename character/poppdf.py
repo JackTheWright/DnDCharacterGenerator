@@ -428,6 +428,7 @@ def dictfiller():
         skill.append(skills.wizard_skills[skill_rand_2])
 
     print('\n', charclass, race, '\n')
+    print('\n', skill, '\n')
 
     STR, DEX, CON, INT, WIS, CHA, features_traits = \
     skills.skill_setter(STR, DEX, CON, INT, WIS, CHA, race, charclass)
