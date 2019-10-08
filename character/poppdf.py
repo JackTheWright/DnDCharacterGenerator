@@ -6,6 +6,7 @@ import math
 from . import race_names
 from . import skills as s
 from . import backgrounds
+from . import weap
 
 
 #CHARSHEET_PATH = 'static/charactersheet.pdf'
@@ -28,7 +29,7 @@ def dictfiller():
     alignment = ['lawful', 'chaotic', 'good', 'good', 'good', 'good',\
             'chaotic', 'chaotic', 'chaotic', 'lawful']
     level = 3
-
+    shield = 0
     percepflag = 0
 
     STR = 0
@@ -41,6 +42,7 @@ def dictfiller():
     names = race_names.names()
     skills = s.skills()
     bg = backgrounds.backgrounds()
+    weapons = weap.weapons_armor()
 
     skill = []
     # Background will be randomized
@@ -110,6 +112,22 @@ def dictfiller():
         proficiencies = 'Armor: Light, Medium, Shields\nWeapons: Simple,\
         Martial'
 
+        # weapon selection
+        wind = random.randint(0, len(weapons.martial_weapons)-1)
+        weapon = weapons.martial_weapons[ind]
+        dmg = weapons.martial_weapons_dmg[ind]
+
+        #armor selection
+        aind = random.randint(0, 1)
+        armor_t = weapons.armor_arr[aind]
+        armor_c = weapons.armor_class[aind]
+        acind = random.randint(0, len(armor_type)-1)
+        armor = armor_type[acind]
+        armorclass = armor_class[acind]
+
+        # shielf flag
+        shield = random.randint(0,1)
+
         skill_rand_1 = random.randint(0, 5)
         skill.append(skills.barb_skills[skill_rand_1])
         del skills.barb_skills[skill_rand_1]
@@ -122,6 +140,17 @@ def dictfiller():
         st2 = 'CHA'
         data_dict['HPMax'] = str(level * 8 + (2 * level))
         proficiencies = 'Armor: Light\n Weapons: Simple, Hand Crossbows, Longswords\nRapiers, Shortswords'
+
+        #Weapon selection
+        wind = random.randint(0, len(weapons.bard_weapons)-1)
+        weapon = weapons.bard_weapons[ind]
+        dmg = weapons.bard_weapons_dmg[ind]
+
+        # Armor selection
+        acind = random.randint(0, len(weapons.light_armor)-1)
+        armor = weapons.light_armor[acind]
+        armorclass = weapons.light_armor_ac[acind]
+
 
         skill_rand_1 = random.randint(0, len(skills.all_skills)-1)
         skill.append(skills.all_skills[skill_rand_1])
@@ -139,6 +168,23 @@ def dictfiller():
         data_dict['HPMax'] = str(level * 8 + (2 * level))
         proficiencies = 'Armor: Light, Medium, Shields\n Weapons: Simple'
 
+        # armor selection
+        aind = random.randint(0, 1)
+        armor_t = weapons.armor_arr[aind]
+        armor_c = weapons.armor_class[aind]
+        acind = random.randint(0, len(armor_type)-1)
+        armor = armor_type[acind]
+        armorclass = armor_class[acind]
+
+        # weapon selection
+        wind = random.randint(0, len(weapons.simple_weapons)-1)
+        weapon = weapons.simple_weapons[ind]
+        dmg = weapons.simple_weapons_dmg[ind]
+
+        # shield flag
+        shield = random.randint(0,1)
+
+
         skill_rand_1 = random.randint(0, len(skills.cleric_skills)-1)
         skill.append(skills.cleric_skills[skill_rand_1])
         del skills.cleric_skills[skill_rand_1]
@@ -151,6 +197,22 @@ def dictfiller():
         st2 = 'WIS'
         data_dict['HPMax'] = str(level * 8 + (2 * level))
         proficiencies = 'Armor: Light, Medium, Shields\n Weapons: Clubs, daggers, darts,\njavelins, maces, quarterstaffs,\nscimitars, sickles, slings, spears \nTools: Herbalism kit'
+
+        # weapon selectio
+        wind = random.randint(0, len(weapons.druid_weapons)-1)
+        weapon = weapons.druid_weapons[ind]
+        dmg = weapons.druid_weapons_dmg[ind]
+
+        # armor selection
+        aind = random.randint(0, 1)
+        armor_t = weapons.armor_arr[aind]
+        armor_c = weapons.armor_class[aind]
+        acind = random.randint(0, len(armor_type)-1)
+        armor = armor_type[acind]
+        armorclass = armor_class[acind]
+
+        # shield flag
+        shield = random.randint(0,1)
 
         skill_rand_1 = random.randint(0, len(skills.druid_skills)-1)
         skill.append(skills.druid_skills[skill_rand_1])
@@ -165,6 +227,22 @@ def dictfiller():
         data_dict['HPMax'] = str(level * 10 + (2 * level))
         proficiencies = 'Armor: All, Shields\n Weapons: all'
 
+        # weapon selection
+        wind = random.randint(0, len(weapons.martial_weapons)-1)
+        weapon = weapons.martial_weapons[ind]
+        dmg = weapons.martial_weapons_dmg[ind]
+
+        #armor selection
+        aind = random.randint(0, 2)
+        armor_t = weapons.armor_arr[aind]
+        armor_c = weapons.armor_class[aind]
+        acind = random.randint(0, len(armor_type)-1)
+        armor = armor_type[acind]
+        armorclass = armor_class[acind]
+
+        # shielf flag
+        shield = random.randint(0,1)
+
         skill_rand_1 = random.randint(0, len(skills.fighter_skills)-1)
         skill.append(skills.fighter_skills[skill_rand_1])
         del skills.fighter_skills[skill_rand_1]
@@ -177,6 +255,14 @@ def dictfiller():
         st2 = 'DEX'
         data_dict['HPMax'] = str(level * 8 + (2 * level))
         proficiencies = 'Weapons: simple, shortswords\nTools: Artisans tool, One Instrument\n'
+
+        # weapon selection
+        wind = random.randint(0, len(weapons.monk_weapons)-1)
+        weapon = weapons.monk_weapons[ind]
+        dmg = weapons.monk_weapons_dmg[ind]
+
+        armor = 'cloth'
+        armorclass = '12'
 
         skill_rand_1 = random.randint(0, len(skills.monk_skills)-1)
         skill.append(skills.monk_skills[skill_rand_1])
@@ -191,6 +277,22 @@ def dictfiller():
         data_dict['HPMax'] = str(level * 10 + (2 * level))
         proficiencies = 'Armor: all\n Weapons: simple, martial'
 
+        # weapon selection
+        wind = random.randint(0, len(weapons.martial_weapons)-1)
+        weapon = weapons.martial_weapons[ind]
+        dmg = weapons.martial_weapons_dmg[ind]
+
+        #armor selection
+        aind = random.randint(0, 2)
+        armor_t = weapons.armor_arr[aind]
+        armor_c = weapons.armor_class[aind]
+        acind = random.randint(0, len(armor_type)-1)
+        armor = armor_type[acind]
+        armorclass = armor_class[acind]
+
+        # shielf flag
+        shield = random.randint(0,1)
+
         skill_rand_1 = random.randint(0, len(skills.paladin_skills)-1)
         skill.append(skills.paladin_skills[skill_rand_1])
         del skills.paladin_skills[skill_rand_1]
@@ -204,6 +306,22 @@ def dictfiller():
         data_dict['HPMax'] = str(level * 10 + (2 * level))
         proficiencies = 'Armor: Light, Medium, Shields\nWeapons: simple, martial'
 
+        # armor selection
+        aind = random.randint(0, 1)
+        armor_t = weapons.armor_arr[aind]
+        armor_c = weapons.armor_class[aind]
+        acind = random.randint(0, len(armor_type)-1)
+        armor = armor_type[acind]
+        armorclass = armor_class[acind]
+
+        # weapon selection
+        wind = random.randint(0, len(weapons.martial_weapons)-1)
+        weapon = weapons.martial_weapons[ind]
+        dmg = weapons.martial_weapons_dmg[ind]
+
+        # shield flag
+        shield = random.randint(0,1)
+
         skill_rand_1 = random.randint(0, len(skills.ranger_skills)-1)
         skill.append(skills.ranger_skills[skill_rand_1])
         del skills.ranger_skills[skill_rand_1]
@@ -216,6 +334,16 @@ def dictfiller():
         st2 = 'INT'
         data_dict['HPMax'] = str(level * 8 + (2 * level))
         proficiencies = 'Armor: Light\nWeapons: simple, shortswords, crossbows\n Tools: Thieves tool'
+
+        #Weapon selection
+        wind = random.randint(0, len(weapons.rogue_weapons)-1)
+        weapon = weapons.rogue_weapons[ind]
+        dmg = weapons.rogue_weapons_dmg[ind]
+
+        # Armor selection
+        acind = random.randint(0, len(weapons.light_armor)-1)
+        armor = weapons.light_armor[acind]
+        armorclass = weapons.light_armor_ac[acind]
 
         skill_rand_1 = random.randint(0, len(skills.rogue_skills)-1)
         skill.append(skills.rogue_skills[skill_rand_1])
@@ -236,6 +364,16 @@ def dictfiller():
         data_dict['HPMax'] = str(level * 6 + (2 * level))
         proficiencies = 'Armor: Light\nWeapons: Very Simple'
 
+        #Weapon selection
+        wind = random.randint(0, len(weapons.simple_weapons)-1)
+        weapon = weapons.simple_weapons[ind]
+        dmg = weapons.simple_weapons_dmg[ind]
+
+        # Armor selection
+        acind = random.randint(0, len(weapons.light_armor)-1)
+        armor = weapons.light_armor[acind]
+        armorclass = weapons.light_armor_ac[acind]
+
         skill_rand_1 = random.randint(0, len(skills.sorcerer_skills)-1)
         skill.append(skills.sorcerer_skills[skill_rand_1])
         del skills.sorcerer_skills[skill_rand_1]
@@ -249,6 +387,16 @@ def dictfiller():
         data_dict['HPMax'] = str(level * 8 + (2 * level))
         proficiencies = 'Armor: Light\nWeapons: Simple'
 
+        #Weapon selection
+        wind = random.randint(0, len(weapons.simple_weapons)-1)
+        weapon = weapons.simple_weapons[ind]
+        dmg = weapons.simple_weapons_dmg[ind]
+
+        # Armor selection
+        acind = random.randint(0, len(weapons.light_armor)-1)
+        armor = weapons.light_armor[acind]
+        armorclass = weapons.light_armor_ac[acind]
+
         skill_rand_1 = random.randint(0, len(skills.warlock_skills)-1)
         skill.append(skills.warlock_skills[skill_rand_1])
         del skills.warlock_skills[skill_rand_1]
@@ -261,6 +409,16 @@ def dictfiller():
         st2 = 'WIS'
         data_dict['HPMax'] = str(level * 6 + (2 * level))
         proficiencies = 'Armor: Light\nWeapons: Very Simple'
+
+          #Weapon selection
+          wind = random.randint(0, len(weapons.simple_weapons)-1)
+          weapon = weapons.simple_weapons[ind]
+          dmg = weapons.simple_weapons_dmg[ind]
+
+          # Armor selection
+          acind = random.randint(0, len(weapons.light_armor)-1)
+          armor = weapons.light_armor[acind]
+          armorclass = weapons.light_armor_ac[acind]
 
         skill_rand_1 = random.randint(0, len(skills.wizard_skills)-1)
         skill.append(skills.wizard_skills[skill_rand_1])
@@ -298,6 +456,12 @@ def dictfiller():
     data_dict['WISmod'] = skills.mod_get(WIS)
     data_dict['CHA'] = str(CHA)
     data_dict['CHamod'] = skills.mod_get(CHA)
+
+    data_dict['AC'] = str(int(armorclass) + int(skills.mod_get(DEX)) + (2 * shield))
+    data_dict['Equipment'] = armor
+    data_dict['Wpn Name'] = weapon
+    data_dict['Wpn1 Damage'] = dmg
+    data_dict['Wpn1 AtkBonus'] = str(prof + int(skill.mod_get(STR)))
 
     data_dict['Features and Traits'] = features_traits
     data_dict['ProficienciesLang'] = proficiencies
