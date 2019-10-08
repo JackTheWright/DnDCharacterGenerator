@@ -315,14 +315,13 @@ def dictfiller():
     bglen = len(bg.backs)
     randombgind = random.randint(0, bglen-1)
     background = bg.backs[randombgind]
-    if background.contains('_'):
-        backgrounders = background
-        tmplist = list(background)
-        ind = tmplist.index('_')
+    backgrounders = list(background)
+    if backgrounders.contains('_'):
+        ind = backgrounders.index('_')
         backgrounders[ind] = ' '
         backgrounders = str(backgrounders)
     else:
-        backgrounders = background
+        backgrounders = str(backgrounders)
     data_dict['Background'] = backgrounders
     ind = bg.backs.index(background)
 
