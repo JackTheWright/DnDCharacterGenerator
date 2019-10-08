@@ -468,7 +468,12 @@ def dictfiller():
     data_dict['Features and Traits'] = features_traits
     data_dict['ProficienciesLang'] = proficiencies
 
-    print(skill)
+    data_dict['SP'] = str(random.randint(0, 99))
+    data_dict['GP'] = str(random.randint(0, 49))
+    data_dict['CP'] = str(random.randint(0, 99))
+    data_dict['EP'] = str(random.randint(0, 10))
+    data_dict['PP'] = str(random.randint(0, 2))
+
     for ability in skill:
         if ability in skills.Strength_skills:
             data_dict[ability] = str(prof + int(skills.mod_get(STR)))
