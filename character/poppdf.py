@@ -124,44 +124,55 @@ def dictfiller(level):
         # leveling
         if level >= 1:
             class_features = 'Rage\nUnarmored Defence\n'
+
         if level >= 2:
             class_features += 'Reckless Attack\nDanger Sense\n'
+
         if level >= 3:
             primal_path = random.randint(0, 1)
             if primal_path == 0:
                 primal_path_str = 'Path of the Wild Soul'
-                class_features += 'Primal Path: ' + primal_path_str + 'Lingering\
-                Magic\nWild Surge\n'
+                class_features += 'Primal Path:\n -> ' + primal_path_str + '\nLingering Magic\nWild Surge\n'
             else:
                 primal_path_str = 'Path of the Berserker'
-                class_features = 'Primal Path: ' + primal_path_str + 'Frenzy\n'
+                class_features = 'Primal Path:\n -> ' + primal_path_str + '\nFrenzy\n'
+
         if level >= 5:
             class_features += 'Extra Attack\nFast Movement\n'
+
         if level >= 6:
             if primal_path == 0:
                 class_features += 'Magic Reserves\n'
             elif primal_path == 1:
                 class_features += 'Mindless Rage\n'
+
         if level >= 7:
             class_features += 'Feral Instict\n'
+
         if level >= 9:
             class_features += 'Brutal Critical\n'
+
         if level >= 10:
             if primal_path == 0:
                 class_features += 'Arcane Rebuke\n'
             elif primal_path == 1:
                 class_features += 'Intimidating Presence\n'
+
         if level >= 11:
             class_features += 'Relentless Rage\n'
+
         if level >= 14:
             if primal_path == 0:
                 class_features += 'Arcane Rebuke\n'
             elif primal_path == 1:
                 class_features += 'Retaliation\n'
+
         if level >= 15:
             class_features += 'Persistant Rage\n'
+
         if level >= 18:
             class_features += 'Indomitable Might\n'
+
         if level >= 20:
             class_features += 'Primal Champion\n'
 
@@ -189,6 +200,8 @@ def dictfiller(level):
         del skills.barb_skills[skill_rand_1]
         skill_rand_2 = random.randint(0, len(skills.barb_skills)-1)
         skill.append(skills.barb_skills[skill_rand_2])
+
+
 
 
 
@@ -220,10 +233,10 @@ def dictfiller(level):
             bard_college = random.randint(0, 1)
             if bard_college == 0:
                 bard_college_str = 'College of Eloquence'
-                class_features += 'Bard College: ' + bard_college_str + '\nUniversal Speech\nSoothing Words\n'
+                class_features += 'Bard College:\n -> ' + bard_college_str + '\nUniversal Speech\nSoothing Words\n'
             else:
                 bard_college_str = 'College of Lore'
-                class_features += 'Bard College: ' + bard_college_str + '\nCutting Words\n'
+                class_features += 'Bard College:\n -> ' + bard_college_str + '\nCutting Words\n'
             spell_slots['1'] += 1
             spell_slots['2'] = 2
             allowed_spells = 6
@@ -345,7 +358,7 @@ def dictfiller(level):
 
         if level >= 2:
             # c = 2, 1 = 3
-            class_features += 'Channel Divinity (1/rest, 2/rest @ 6th, 3/rest @ 18th)\nDisciple of Life\n'
+            class_features += 'Channel Divinity\nDisciple of Life\n'
             spell_slots['1'] = 3
             allowed_spells = 5
 
@@ -365,7 +378,7 @@ def dictfiller(level):
             # c = 3, 1 = 4, 2 = 3, 3 = 2
             allowed_spells = 8
             spell_slots['3'] = 2
-            class_features += 'Destroy Undead (CR 1/2, CR 1 @ 8th, CR2 @ 11th, CR3 @ 14th, CR4 @ 17th)\n'
+            class_features += 'Destroy Undead\n'
 
         if level >= 6:
             # c = 3, 1 = 4, 2 = 3, 3 = 3
@@ -478,17 +491,17 @@ def dictfiller(level):
             druid_circle = random.randint(0, 3)
             if druid_circle == 0:
                 druid_circle_str = 'Dreams'
-                class_features += 'Wild Shape\nDruid Circle: ' + druid_circle_str + '\nBalm of the Summer Court\n'
+                class_features += 'Wild Shape\nDruid Circle:\n -> ' + druid_circle_str + '\nBalm of the Summer Court\n'
                 spell_slots['c'] += 1
             elif druid_circle == 1:
                 druid_circle_str = 'Moon'
-                class_features += 'Combat Wild Shape\nDruid Circle: ' + druid_circle_str + '\nCircle Forms\n'
+                class_features += 'Combat Wild Shape\nDruid Circle:\n -> ' + druid_circle_str + '\nCircle Forms\n'
             elif druid_circle == 2:
                 druid_circle_str = 'Land'
-                class_features += 'Wild Shape\nDruid Circle: ' + druid_circle_str + '\nNatural Recovery\n'
+                class_features += 'Wild Shape\nDruid Circle:\n -> ' + druid_circle_str + '\nNatural Recovery\n'
             elif druid_circle == 3:
                 druid_circle_str = 'Spores'
-                class_features += 'Wild Shape\nDruid Circle: ' + druid_circle_str + '\nHalo of Spores\nSymbiotic Entity\n'
+                class_features += 'Wild Shape\nDruid Circle:\n -> ' + druid_circle_str + '\nHalo of Spores\nSymbiotic Entity\n'
             spell_slots['1'] = 3
             allowed_spells = 5
 
@@ -652,7 +665,7 @@ def dictfiller(level):
         if level >= 1:
             fighting_style = random.choice(fighting_styles)
             fighting_styles.remove(fighting_style)
-            class_features = 'Fighting Style: ' + fighting_style + '\nSecond Wind\n'
+            class_features = 'Fighting Style:\n -> ' + fighting_style + '\nSecond Wind\n'
             # c = 2, 1 = 2
 
         if level >= 2:
@@ -660,10 +673,10 @@ def dictfiller(level):
             fighter_ma = random.randint(0, 2)
             if fighter == 0:
                 fighter_ma_str = 'Champion'
-                class_features += 'Action Surge\nMartial Archetype: ' + fighter_ma_str + '\n'
+                class_features += 'Action Surge\nMartial Archetype:\n -> ' + fighter_ma_str + '\n'
             elif fighter_ma == 1:
                 fighter_ma_str = 'Battle Master'
-                class_features = 'Action Surge\nMartial Archetype: ' + fighter_ma_str + '\n'
+                class_features = 'Action Surge\nMartial Archetype:\n -> ' + fighter_ma_str + '\n'
                 m1 = random.choice(maneuvers)
                 maneuvers.remove(m1)
                 m2 = random.choice(maneuvers)
@@ -673,7 +686,7 @@ def dictfiller(level):
                 maneuver_str += m1 + '\n' + m2 + '\n' + m3 + '\n'
             elif fighter_ma == 2:
                 fighter_ma_str = 'Eldritch Knight'
-                class_features = 'Action Surge\nMartial Archetype: ' + fighter_ma_str + '\n'
+                class_features = 'Action Surge\nMartial Archetype:\n -> ' + fighter_ma_str + '\n'
 
         if level >= 3:
             #c = 2, 1 = 4, 2 = 2
@@ -724,7 +737,7 @@ def dictfiller(level):
         if level >= 10:
             if fighter == 0:
                 fighting_style = random.choice(fighting_styles)
-                class_features += 'Additional Fighting Style: ' + fighting_style + ' \n'
+                class_features += 'Additional Fighting Style:\n -> ' + fighting_style + ' \n'
             elif fighter_ma == 1:
                 class_features += 'Improved Combat Superiority\n'
             elif fighter_ma == 2:
@@ -852,23 +865,23 @@ def dictfiller(level):
             mon_trad = random.randint(0, 5)
             if mon_trad == 0:
                 mon_trad_str = 'Drunken Master'
-                class_features += 'Monastic Tradition: ' + mon_trad_str + '\nDrunken Technique\nDeflect Missiles\n'
+                class_features += 'Monastic Tradition:\n -> ' + mon_trad_str + '\nDrunken Technique\nDeflect Missiles\n'
                 #proficiency in performance
             elif mon_trad == 1:
                 mon_trad_str = 'Four Elements'
-                class_features += 'Monastic Tradition: ' + mon_trad_str + '\nElemental Attunement\n' + random.choice(disciplines_3) + '\nDeflect Missiles\n'
+                class_features += 'Monastic Tradition:\n -> ' + mon_trad_str + '\nElemental Attunement\n' + random.choice(disciplines_3) + '\nDeflect Missiles\n'
             elif mon_trad == 2:
                 mon_trad_str = 'Kensei'
-                class_features += 'Monastic Tradition: ' + mon_trad_str + '\nPath of the Kensei\nDeflect Missiles\n'
+                class_features += 'Monastic Tradition:\n -> ' + mon_trad_str + '\nPath of the Kensei\nDeflect Missiles\n'
             elif mon_trad == 3:
                 mon_trad_str = 'Long Death'
-                class_features += 'Monastic Tradition: ' + mon_trad_str + '\nTouch of Death\nDeflect Missiles\n'
+                class_features += 'Monastic Tradition:\n -> ' + mon_trad_str + '\nTouch of Death\nDeflect Missiles\n'
             elif mon_trad == 4:
                 mon_trad_str = 'Open Hand'
-                class_features += 'Monastic Tradition: ' + mon_trad_str + '\nOpen Hand Technique\nDeflect Missiles\n'
+                class_features += 'Monastic Tradition:\n -> ' + mon_trad_str + '\nOpen Hand Technique\nDeflect Missiles\n'
             elif mon_trad == 5:
                 mon_trad_str = 'Shadow'
-                class_features += 'Monastic Tradition: ' + mon_trad_str + '\nShadow Arts\nDeflect Missiles\n'
+                class_features += 'Monastic Tradition:\n -> ' + mon_trad_str + '\nShadow Arts\nDeflect Missiles\n'
 
 
         if level >= 4:
@@ -998,22 +1011,22 @@ def dictfiller(level):
             sacred_oath = random.randint(0, 5)
             if sacred_oath == 0:
                 sacred_oath_str = 'Ancients'
-                class_features += 'Sacred Oath: ' + sacred_oath_str + '\n' + random.choice(['Nature\'s Wrath', 'Turn the Faithless']) + '\nDivine Health\n'
+                class_features += 'Sacred Oath:\n -> ' + sacred_oath_str + '\n' + random.choice(['Nature\'s Wrath', 'Turn the Faithless']) + '\nDivine Health\n'
             elif sacred_oath == 1:
                 sacred_oath_str = 'Conquest'
-                class_features += 'Sacred Oath: ' + sacred_oath_str + '\n' + random.choice(['Conquering Presence', 'Guided Strike']) + '\nDivine Health\n'
+                class_features += 'Sacred Oath:\n -> ' + sacred_oath_str + '\n' + random.choice(['Conquering Presence', 'Guided Strike']) + '\nDivine Health\n'
             elif sacred_oath == 2:
                 sacred_oath_str = 'Crown'
-                class_features += 'Sacred Oath: ' + sacred_oath_str + '\n' + random.choice(['Champion Challenge', 'Turn the Tide']) + '\nDivine Health\n'
+                class_features += 'Sacred Oath:\n -> ' + sacred_oath_str + '\n' + random.choice(['Champion Challenge', 'Turn the Tide']) + '\nDivine Health\n'
             elif sacred_oath == 3:
                 sacred_oath_str = 'Devotion'
-                class_features += 'Sacred Oath: ' + sacred_oath_str + '\n' + random.choice(['Sacred Weapon', 'Turn the Unholy']) + '\nDivine Health\n'
+                class_features += 'Sacred Oath:\n -> ' + sacred_oath_str + '\n' + random.choice(['Sacred Weapon', 'Turn the Unholy']) + '\nDivine Health\n'
             elif sacred_oath == 4:
                 sacred_oath_str = 'Vengeance'
-                class_features += 'Sacred Oath: ' + sacred_oath_str + '\n' + random.choice(['Abjure Enemy', 'Vow of Enmity']) + '\nDivine Health\n'
+                class_features += 'Sacred Oath:\n -> ' + sacred_oath_str + '\n' + random.choice(['Abjure Enemy', 'Vow of Enmity']) + '\nDivine Health\n'
             elif sacred_oath == 5:
                 sacred_oath_str = 'Oathbreaker'
-                class_features += 'Sacred Oath: ' + sacred_oath_str + '\n' + random.choice(['Control Undead', 'Dreadful Aspect']) + '\nDivine Health\n'
+                class_features += 'Sacred Oath:\n -> ' + sacred_oath_str + '\n' + random.choice(['Control Undead', 'Dreadful Aspect']) + '\nDivine Health\n'
 
 
         if level >= 4:
@@ -1156,11 +1169,11 @@ def dictfiller(level):
             ranger_at = random.randint(0, 1)
             if ranger_at == 0:
                 ranger_at_str = 'Hunter'
-                class_features += 'Primeval Awareness\nRanger Conclave: ' + ranger_at_str + '\nRanger\'s Companion\n'
+                class_features += 'Primeval Awareness\nRanger Conclave:\n -> ' + ranger_at_str + '\nRanger\'s Companion\n'
                 #proficiency in performance
             elif ranger_at == 1:
                 ranger_at_str = 'Beast Master'
-                class_features += 'Primeval Awareness\nRanger Conclave: ' + ranger_at_str + '\n' + random.choice(['Colossus Slayer', 'Giant Killer', 'Horde Breaker']) + '\n'
+                class_features += 'Primeval Awareness\nRanger Conclave:\n -> ' + ranger_at_str + '\n' + random.choice(['Colossus Slayer', 'Giant Killer', 'Horde Breaker']) + '\n'
 
         if level >= 4:
             do_nothing = 1
@@ -1278,14 +1291,14 @@ def dictfiller(level):
             rogue_at = random.randint(0, 2)
             if rogue_at == 0:
                 rogue_at_str = 'Thief'
-                class_features += 'Roguish Archetype: ' + rogue_at_str + '\nFast Hands\nSecond-Story Work\n'
+                class_features += 'Roguish Archetype:\n -> ' + rogue_at_str + '\nFast Hands\nSecond-Story Work\n'
             elif rogue_at == 1:
                 rogue_at_str = 'Assassin'
-                class_features += 'Roguish Archetype: ' + rogue_at_str + '\n'
+                class_features += 'Roguish Archetype:\n -> ' + rogue_at_str + '\n'
                 #proficiencies with disguise and poisoners kit
             elif rogue_at == 2:
                 rogue_at_str = 'Arcane Trickster'
-                class_features += 'Roguish Archetype: ' + rogue_at_str + '\nSpellcasting\nMage Hand Legerdemain\n'
+                class_features += 'Roguish Archetype:\n -> ' + rogue_at_str + '\nSpellcasting\nMage Hand Legerdemain\n'
 
         if level >= 4:
             allowed_spells = 4
@@ -1422,13 +1435,13 @@ def dictfiller(level):
             if sorc_orig == 0:
                 sorc_orig_str = 'Draconic Bloodline'
                 #get some dragon bonuses
-                class_features += 'Sorcerous Origins: ' + sorc_orig_str + '\nDraconic Resilience\n'
+                class_features += 'Sorcerous Origins:\n -> ' + sorc_orig_str + '\nDraconic Resilience\n'
             elif sorc_orig == 1:
                 sorc_orig_str = 'Wild Magic'
-                class_features += 'Sorcerous Origins: ' + sorc_orig_str + '\nWild Magic Surge\nTides of Chaos\n'
+                class_features += 'Sorcerous Origins:\n -> ' + sorc_orig_str + '\nWild Magic Surge\nTides of Chaos\n'
             elif sorc_orig == 2:
                 sorc_orig_str = 'Shadow'
-                class_features += 'Sorcerous Origins: ' + sorc_orig_str + '\nEyes of the Dark\nStrength of the Grave\n'
+                class_features += 'Sorcerous Origins:\n -> ' + sorc_orig_str + '\nEyes of the Dark\nStrength of the Grave\n'
 
         if level >= 2:
             # c = 2, 1 = 3
@@ -1561,17 +1574,17 @@ def dictfiller(level):
             if patron == 0:
                 patron_str = 'Archfey'
                 #get some dragon bonuses
-                class_features += 'Patron: ' + patron_str + '\nFey Presence\n'
+                class_features += 'Patron:\n -> ' + patron_str + '\nFey Presence\n'
             elif patron == 1:
                 patron_str = 'Celestial'
                 #bonus cantrips
-                class_features += 'Patron: ' + patron_str + '\nHealing Light\n'
+                class_features += 'Patron:\n -> ' + patron_str + '\nHealing Light\n'
             elif patron == 2:
                 patron_str = 'Fiend'
-                class_features += 'Patron: ' + patron_str + '\nDark One\'s Blessing\n'
+                class_features += 'Patron:\n -> ' + patron_str + '\nDark One\'s Blessing\n'
             elif patron == 3:
                 patron_str = 'Great Old One'
-                class_features += 'Patron: ' + patron_str + '\nAwakened Mind\n'
+                class_features += 'Patron:\n -> ' + patron_str + '\nAwakened Mind\n'
 
 
         if level >= 2:
@@ -1730,43 +1743,43 @@ def dictfiller(level):
             if tradition == 0:
                 tradition_str = 'Abjuration'
                 #get some dragon bonuses
-                class_features += 'Arcane Tradition: ' + tradition_str + '\nAbjuration Savant\nArcane Ward\n'
+                class_features += 'Arcane Tradition:\n -> ' + tradition_str + '\nAbjuration Savant\nArcane Ward\n'
             elif tradition == 1:
                 tradition_str = 'Bladesinger'
-                class_features += 'Arcane Tradition: ' + tradition_str + '\nTraining in War and Song\nBladesong\n'
+                class_features += 'Arcane Tradition:\n -> ' + tradition_str + '\nTraining in War and Song\nBladesong\n'
             elif tradition == 2:
                 tradition_str = 'Conjuration'
-                class_features += 'Arcane Tradition: ' + tradition_str + '\nConjuration Savant\nMinor Conjuration\n'
+                class_features += 'Arcane Tradition:\n -> ' + tradition_str + '\nConjuration Savant\nMinor Conjuration\n'
             elif tradition == 3:
                 tradition_str = 'Divination'
-                class_features += 'Arcane Tradition: ' + tradition_str + '\nDivination Savant\nPortent\n'
+                class_features += 'Arcane Tradition:\n -> ' + tradition_str + '\nDivination Savant\nPortent\n'
             elif tradition == 4:
                 tradition_str = 'Enchantment'
-                class_features += 'Arcane Tradition: ' + tradition_str + '\nEnchantment Savant\nHypnotic Gaze\n'
+                class_features += 'Arcane Tradition:\n -> ' + tradition_str + '\nEnchantment Savant\nHypnotic Gaze\n'
             elif tradition == 5:
                 tradition_str = 'Evocation'
-                class_features += 'Arcane Tradition: ' + tradition_str + '\nEvocation Savant\nSculpt Spells\n'
+                class_features += 'Arcane Tradition:\n -> ' + tradition_str + '\nEvocation Savant\nSculpt Spells\n'
             elif tradition == 6:
                 tradition_str = 'Illusion'
-                class_features += 'Arcane Tradition: ' + tradition_str + '\nIllusion Savant\nImproved Minor Illusion\n'
+                class_features += 'Arcane Tradition:\n -> ' + tradition_str + '\nIllusion Savant\nImproved Minor Illusion\n'
             elif tradition == 7:
                 tradition_str = 'Invention'
-                class_features += 'Arcane Tradition: ' + tradition_str + '\nTools of the Inventor\nArcanomechanical Armor\nReckless Casting\n'
+                class_features += 'Arcane Tradition:\n -> ' + tradition_str + '\nTools of the Inventor\nArcanomechanical Armor\nReckless Casting\n'
             elif tradition == 8:
                 tradition_str = 'Lore Mastery'
-                class_features += 'Arcane Tradition: ' + tradition_str + '\nSpell Secrets\nAltering Spells\n'
+                class_features += 'Arcane Tradition:\n -> ' + tradition_str + '\nSpell Secrets\nAltering Spells\n'
             elif tradition == 9:
                 tradition_str = 'Necromancy'
-                class_features += 'Arcane Tradition: ' + tradition_str + '\nNecromancy Savant\nGrim Harvest\n'
+                class_features += 'Arcane Tradition:\n -> ' + tradition_str + '\nNecromancy Savant\nGrim Harvest\n'
             elif tradition == 10:
                 tradition_str = 'Theurgy'
-                class_features += 'Arcane Tradition: ' + tradition_str + '\nDivine Inspiration\nArcane Initiate\nChannel Arcana\nDivine Arcana\n'
+                class_features += 'Arcane Tradition:\n -> ' + tradition_str + '\nDivine Inspiration\nArcane Initiate\nChannel Arcana\nDivine Arcana\n'
             elif tradition == 11:
                 tradition_str = 'Transmutation'
-                class_features += 'Arcane Tradition: ' + tradition_str + '\nTransmutation Savant\nMinor Alchemy\n'
+                class_features += 'Arcane Tradition:\n -> ' + tradition_str + '\nTransmutation Savant\nMinor Alchemy\n'
             elif tradition == 12:
                 tradition_str = 'War Magic'
-                class_features += 'Arcane Tradition: ' + tradition_str + '\nArcane Deflection\nTactical Wit\n'
+                class_features += 'Arcane Tradition:\n -> ' + tradition_str + '\nArcane Deflection\nTactical Wit\n'
 
         if level >= 3:
             spell_slots['1'] += 1
