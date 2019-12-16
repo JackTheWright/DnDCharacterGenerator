@@ -246,6 +246,7 @@ class skills:
         'Gnomish', 'Orc', 'Infernal', 'Giant']
         color = [ 'Black', 'Copper', 'Bronze', 'Blue', 'Brass', 'Gold', 'Red',\
          'Green', 'Silver', 'White' ]
+
         count = 0
         random.shuffle(tools)
         random.shuffle(skill_points)
@@ -334,7 +335,7 @@ class skills:
                 CHA += 1
                 counter -= 1
             elif counter % 2 == 0:
-                featsies += random.choice(feats_list) + '\n'
+                featsies += random.choice(skills.feats_list) + '\n'
                 counter -= 2
 
         features_traits += class_features
