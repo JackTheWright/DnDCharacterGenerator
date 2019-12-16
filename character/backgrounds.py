@@ -2885,11 +2885,11 @@ class backgrounds:
     	"Prophet. I will show them they are all heroes",
     	"False Prophet. I will convince them all of MY truth",
     	"Insane Rambler. I just like telling stories, they don't need to make sense or be true",
-    	"I love my fans, without them I am nothing and I strive to entertain them"
-    	"I love my book of stories more than anything, I cant imagine losing it"
-    	"Those that ask to hear my stories a second time earn a special place in my heart"
-    	"The subject of my stories is all I care for"
-    	"Innkeepers who let me perform quickly become my closest friends"
+    	"I love my fans, without them I am nothing and I strive to entertain them",
+    	"I love my book of stories more than anything, I cant imagine losing it",
+    	"Those that ask to hear my stories a second time earn a special place in my heart",
+    	"The subject of my stories is all I care for",
+    	"Innkeepers who let me perform quickly become my closest friends",
     	"Though I tell many stories, my thoughts are never far from home. Families often have the best stories",
     	"My stories ramble and I'm often asked to get to the point",
     	"People don't appreciate my dark or irreverent humor",
