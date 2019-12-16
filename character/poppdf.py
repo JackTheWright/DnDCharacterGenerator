@@ -31,7 +31,6 @@ def dictfiller(level):
             'paladin', 'ranger', 'rogue', 'sorcerer', 'warlock', 'wizard']
     alignment = ['lawful', 'chaotic', 'good', 'good', 'good', 'good',\
             'chaotic', 'chaotic', 'chaotic', 'lawful']
-    level = 3
     shield = 0
     percepflag = 0
     ability_score_improvements = 0
