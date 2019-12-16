@@ -314,22 +314,22 @@ class skills:
         featsies = None
         while (counter != 0):
             inty = random.randint(0,7)
-            if inty == 0 && STR < 20:
+            if inty == 0 and STR < 20:
                 STR += 1
                 counter -= 1
-            elif inty == 1 && DEX < 20:
+            elif inty == 1 and DEX < 20:
                 DEX += 1
                 counter -= 1
-            elif inty == 2 && CON < 20:
+            elif inty == 2 and CON < 20:
                 CON += 1
                 counter -= 1
-            elif inty == 3 && INT < 20:
+            elif inty == 3 and INT < 20:
                 INT += 1
                 counter -= 1
-            elif inty == 4 && WIS < 20:
+            elif inty == 4 and WIS < 20:
                 WIS += 1
                 counter -= 1
-            elif inty == 5 && CHA < 20
+            elif inty == 5 and CHA < 20
                 CHA += 1
                 counter -= 1
             elif counter % 2 == 0:
