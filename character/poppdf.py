@@ -1566,7 +1566,7 @@ def dictfiller(level):
         proficiencies = 'Armor: Light\nWeapons: Simple'
         patron = 0
         patron_str = ''
-        pact_str
+        pact_str = ''
 
         #levelling
         if level >= 1:
