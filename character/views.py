@@ -12,7 +12,7 @@ def generate(request):
     print(level)
     poppdf.write_fillable_pdf(url1,
                               url2,
-                              poppdf.data_dict, 5)
+                              poppdf.data_dict, int(level))
     print(os.path.abspath('character.html'))
     print(os.path.abspath('newcharactersheet.pdf'))
     print(os.listdir("/app/static/character"))
