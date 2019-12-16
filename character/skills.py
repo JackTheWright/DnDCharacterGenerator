@@ -167,7 +167,78 @@ class skills:
     'Religion'
     ]
 
-    def skill_setter(self, STR, DEX, CON, INT, WIS, CHA, race, charclass):
+    feats = [
+     'Acrobat',
+     'Actor',
+     'Animal Handler',
+     'Alert',
+     'Alchemist',
+     'Arcanist',
+     'Athlete',
+     'Blade Mastery',
+     'Brawny',
+     'Burglar',
+     'Charger',
+     'Crossbow Expert',
+     'Defensive Duelist',
+     'Diplomat',
+     'Dual Wielder',
+     'Dungeon Delver',
+     'Durable',
+     'Empathic',
+     'Elemental Adept',
+     'Fell Handed',
+     'Flail Mastery',
+     'Gourmand',
+     'Grappler',
+     'Great Weapon Master',
+     'Healer',
+     'Heavily Armored',
+     'Heavy Armor Master',
+     'Historian',
+     'Inspiring Leader',
+     'Investigator',
+     'Keen Mind',
+     'Lightly Armored',
+     'Linguist',
+     'Lucky',
+     'Mage Slayer',
+     'Magic Initiate',
+     'Martial Adept',
+     'Master of Disguise',
+     'Medium Armor Master',
+     'Medic',
+     'Menacing',
+     'Mobile',
+     'Moderately Armored',
+     'Mounted Combatant',
+     'Naturalist',
+     'Observant',
+     'Perceptive',
+     'Performer',
+     'Polearm Master',
+     'Quick-Fingered',
+     'Resilient',
+     'Ritual Caster',
+     'Savage Attacker',
+     'Sentinel',
+     'Sharpshooter',
+     'Shield Master',
+     'Silver-Tongued',
+     'Skiller',
+     'Skulker',
+     'Spear Mastery',
+     'Spell Sniper',
+     'Stealthy',
+     'Survivalist',
+     'Tavern Brawler',
+     'Theologian',
+     'Tough',
+     'War Caster',
+     'Weapon Master'
+    ]
+
+    def skill_setter(self, STR, DEX, CON, INT, WIS, CHA, race, charclass, class_features, level):
         skill_points = [13, 12, 10, 8]
         tools = ['smiths tools', 'brewer supplies', 'masons tools']
         languages = ['Dwarven', 'Elvish', 'Fae', 'Draconic', 'Halfling',
@@ -201,13 +272,13 @@ class skills:
 
         if race is 'dwarf':
             CON += 2
-            features_traits = 'Darkvision\nDwarven Resilience\nDwarven Combat Training\nStonecunning\n' + tools[0] + '\nLanguages: Common, Dwarven'
+            features_traits = 'Darkvision\nDwarven Resilience\nDwarven Combat Training\nStonecunning\n' + tools[0] + '\nLanguages: Common, Dwarven\n'
         elif race is 'elf':
             DEX += 2
-            features_traits = 'Darkvision\nKeen Senses\nFey Ancestry\nTrance\nLanguages: Common, Elvish'
+            features_traits = 'Darkvision\nKeen Senses\nFey Ancestry\nTrance\nLanguages: Common, Elvish\n'
         elif race is 'halfling':
             DEX += 2
-            features_traits = 'Lucky\nBrave\nHalfling Nimbleness\nLanguages:Common, Halfling'
+            features_traits = 'Lucky\nBrave\nHalfling Nimbleness\nLanguages:Common, Halfling\n'
         elif race is 'human':
             STR += 1
             DEX += 1
@@ -215,29 +286,60 @@ class skills:
             INT += 1
             WIS += 1
             CHA += 1
-            features_traits = 'Languages: Common, ' + languages[0]
+            features_traits = 'Languages: Common, ' + languages[0] + '\n'
         elif race is 'dragonborn':
             STR += 2
             CHA += 1
-            features_traits = 'Draconic Ancestry\nBreath Weapon\nDamage Resistance\nLanguages: Common, Draconic\nColor: ' + color[0]
+            features_traits = 'Draconic Ancestry\nBreath Weapon\nDamage Resistance\nLanguages: Common, Draconic\nColor: ' + color[0] + '\n'
         elif race is 'gnome':
             INT += 2
-            features_traits = 'Darkvision\nGnome Cunning\nLanguages: Common, Gnomish'
+            features_traits = 'Darkvision\nGnome Cunning\nLanguages: Common, Gnomish\n'
         elif race is 'halfelf':
             CHA += 2
-            features_traits = 'Darkvision\nFey Ancestry\nSkill Versatility\nLanguages: Common, Elvish'
+            features_traits = 'Darkvision\nFey Ancestry\nSkill Versatility\nLanguages: Common, Elvish\n'
         elif race is 'halforc':
             STR += 2
             CON += 1
-            features_traits = 'Darkvision\nMenacing\nRelentless Endurance\nSavage Attacks\nLanguages: Common, Orc'
+            features_traits = 'Darkvision\nMenacing\nRelentless Endurance\nSavage Attacks\nLanguages: Common, Orc\n'
         elif race is 'tiefling':
             CHA += 2
             INT += 1
-            features_traits = 'Darkvision\nHellish Resistance\nInfernal Legacy\nLanguages: Common, Infernal'
+            features_traits = 'Darkvision\nHellish Resistance\nInfernal Legacy\nLanguages: Common, Infernal\n'
         elif race is 'goliath':
             STR += 2
             CON += 1
-            features_traits = 'Natural Athlete\nStone\'s Endurance\nPowerful Build\nMountain Born\nLanguages: Common, Giant'
+            features_traits = 'Natural Athlete\nStone\'s Endurance\nPowerful Build\nMountain Born\nLanguages: Common, Giant\n'
+
+        counter = math.floor(level / 4) * 2
+        featsies = None
+        while (counter != 0):
+            inty = random.randint(0,7)
+            if inty == 0 && STR < 20:
+                STR += 1
+                counter -= 1
+            elif inty == 1 && DEX < 20:
+                DEX += 1
+                counter -= 1
+            elif inty == 2 && CON < 20:
+                CON += 1
+                counter -= 1
+            elif inty == 3 && INT < 20:
+                INT += 1
+                counter -= 1
+            elif inty == 4 && WIS < 20:
+                WIS += 1
+                counter -= 1
+            elif inty == 5 && CHA < 20
+                CHA += 1
+                counter -= 1
+            elif counter % 2 == 0:
+                featsies += random.choice(feats) + '\n'
+                counter -= 2
+
+        features_traits += class_features
+        if feats is not None:
+            features_traits += 'Feats: ' + featsies
+                #Pick a random feat
 
         return STR, DEX, CON, INT, WIS, CHA, features_traits
 
