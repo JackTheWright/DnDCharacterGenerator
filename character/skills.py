@@ -314,7 +314,7 @@ class skills:
             features_traits = 'Natural Athlete\nStone\'s Endurance\nPowerful Build\nMountain Born\nLanguages: Common, Giant\n'
 
         counter = math.floor(level / 4) * 2
-        featsies = None
+        featsies = ''
         while (counter != 0):
             inty = random.randint(0,9)
             if inty == 0 and STR < 20:
@@ -340,7 +340,7 @@ class skills:
                 counter -= 2
 
         features_traits += class_features
-        if featsies is not None:
+        if featsies is not '':
             features_traits += 'Feats: ' + featsies
                 #Pick a random feat
 
