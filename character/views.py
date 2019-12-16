@@ -9,7 +9,6 @@ def generate(request):
     url1 = 'static/charactersheet.pdf'
     url2 = 'static/character/newcharactersheet.pdf'
     level = request.body
-    level = ''.join(filter(str.isdigit, level))
     print(level)
     poppdf.write_fillable_pdf(url1,
                               url2,
