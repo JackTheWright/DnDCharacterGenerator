@@ -671,7 +671,7 @@ def dictfiller(level):
         if level >= 2:
             # c = 2, 1 = 3
             fighter_ma = random.randint(0, 2)
-            if fighter == 0:
+            if fighter_ma == 0:
                 fighter_ma_str = 'Champion'
                 class_features += 'Action Surge\nMartial Archetype:\n -> ' + fighter_ma_str + '\n'
             elif fighter_ma == 1:
