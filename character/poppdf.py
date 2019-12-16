@@ -1002,7 +1002,7 @@ def dictfiller(level):
         if level >= 2:
             fighting_style = random.choice(fighting_styles)
             fighting_styles.remove(fighting_style)
-            class_features += 'Fighting Style: ' + fighting_style + 'Spellcasting\nDivine Smite\n'
+            class_features += 'Fighting Style: ' + fighting_style + '\nSpellcasting\nDivine Smite\n'
             spell_slots['1'] = 2
 
         if level >= 3:
