@@ -1,5 +1,6 @@
 # File for skills, each class has their own
 import random
+import math
 
 class skills:
 
