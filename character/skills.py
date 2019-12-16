@@ -338,7 +338,7 @@ class skills:
                 counter -= 2
 
         features_traits += class_features
-        if feats is not None:
+        if featsies is not None:
             features_traits += 'Feats: ' + featsies
                 #Pick a random feat
 
