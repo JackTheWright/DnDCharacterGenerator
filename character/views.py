@@ -9,7 +9,7 @@ def generate(request):
     url1 = 'static/charactersheet.pdf'
     url2 = 'static/character/newcharactersheet.pdf'
     level = request.body
-    print(level)
+    print(level-1)
     poppdf.write_fillable_pdf(url1,
                               url2,
                               poppdf.data_dict, 5)
