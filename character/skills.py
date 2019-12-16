@@ -314,7 +314,7 @@ class skills:
         counter = math.floor(level / 4) * 2
         featsies = None
         while (counter != 0):
-            inty = random.randint(0,7)
+            inty = random.randint(0,9)
             if inty == 0 and STR < 20:
                 STR += 1
                 counter -= 1

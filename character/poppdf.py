@@ -1975,11 +1975,11 @@ def dictfiller(level):
     data_dict['Features and Traits'] = features_traits
     data_dict['ProficienciesLang'] = proficiencies
 
-    data_dict['SP'] = str(random.randint(0, math.floor(4*level/2)))
-    data_dict['GP'] = str(random.randint(0, math.floor(3*level/2)))
-    data_dict['CP'] = str(random.randint(0, math.floor(5*level/2)))
-    data_dict['EP'] = str(random.randint(0, math.floor(2*level/2)))
-    data_dict['PP'] = str(random.randint(0, math.floor(level/2)))
+    data_dict['SP'] = str(4 * random.randint(0, level))
+    data_dict['GP'] = str(3 * random.randint(0, level))
+    data_dict['CP'] = str(5 * random.randint(0, level))
+    data_dict['EP'] = str(2 * random.randint(0, level))
+    data_dict['PP'] = str(1 * random.randint(0, level))
 
     for ability in skill:
         if ability in skills.Strength_skills:
