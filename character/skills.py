@@ -329,7 +329,7 @@ class skills:
             elif inty == 4 and WIS < 20:
                 WIS += 1
                 counter -= 1
-            elif inty == 5 and CHA < 20
+            elif inty == 5 and CHA < 20:
                 CHA += 1
                 counter -= 1
             elif counter % 2 == 0:

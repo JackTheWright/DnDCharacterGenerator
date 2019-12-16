@@ -1724,7 +1724,7 @@ def dictfiller(level):
             allowed_spells = 3
             tradition = random.randint(0, 12)
 
-            if tradition == 1 && race is not 'elf':
+            if tradition == 1 and race is not 'elf':
                 tradition = 2
 
             if tradition == 0:
