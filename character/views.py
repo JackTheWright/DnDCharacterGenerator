@@ -8,7 +8,7 @@ from . import poppdf
 def generate(request):
     url1 = 'static/charactersheet.pdf'
     url2 = 'static/character/newcharactersheet.pdf'
-    level = int.from_bytes(request.body, "big")
+    level = request.body.decode("utf-8")
     print(level)
     poppdf.write_fillable_pdf(url1,
                               url2,

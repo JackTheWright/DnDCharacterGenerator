@@ -1566,6 +1566,7 @@ def dictfiller(level):
         proficiencies = 'Armor: Light\nWeapons: Simple'
         patron = 0
         patron_str = ''
+        pact_str
 
         #levelling
         if level >= 1:
@@ -1597,10 +1598,8 @@ def dictfiller(level):
             #c = 2, 1 = 4, 2 = 2
             pact_boon = ['Pact of the Blade', 'Pact of the Chain', 'Pact of the Tome']
             m1 = random.choice(pact_boon)
-            metamagic_mods.remove(m1)
-            m2 = random.choice(pact_boon)
-            metamagic_mods.remove(m2)
-            meta_magics += 'Pact Boon: \n ' + m1 + '\n ' + m2 + '\n '
+            pact_boon.remove(m1)
+            class_features += 'Pact Boon:\n -> ' + m1 + '\n'
             spell_slots['1'] += 1
             spell_slots['2'] = 2
             allowed_spells = 4
