@@ -36,8 +36,7 @@ def dictfiller(level):
     ability_score_improvements = 0
     allowed_spells = 0
     class_features = ''
-    spell_slots = {'c': 0, '1': 0, '2': 0, '3': 0, '4': 0, '5': 0, '6': 0,
-                    '7':0, '8':0, '9':0}
+    spell_slots = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0}
 
     STR = 0
     DEX = 0
@@ -50,6 +49,7 @@ def dictfiller(level):
     skills = s.skills()
     bg = backgrounds.backgrounds()
     weapons = weap.weapons_armor()
+    spells = weap.Spells()
 
     skill = []
     # Background will be randomized
@@ -205,6 +205,7 @@ def dictfiller(level):
 
 
 
+
     elif charclass is 'bard':
         DEX, CHA = 15, 14
         st1 = 'DEX'
@@ -218,14 +219,36 @@ def dictfiller(level):
         if level >= 1:
             class_features = 'Spellcasting\nBardic Inspiration\n'
             # c = 2, 1 = 2
-            spell_slots['c'] = 2
-            spell_slots['1'] = 2
+            spell_slots[0] = 2
+            cant = random.choice(spells.bard_0)
+            spells.bard_0.remove(cant)
+            pdf_page_2['Spells 1014'] = cant
+            cant = random.choice(spells.bard_0)
+            spells.bard_0.remove(cant)
+            pdf_page_2['Spells 1016'] = cant
+
+            spell_slots[1] = 2
+            firstlvl = random.choice(spell.bard_1)
+            spells.bard_1.remove(firstlvl)
+            pdf_page_2['Spells 1015'] = firstlvl
+            firstlvl = random.choice(spell.bard_1)
+            spells.bard_1.remove(firstlvl)
+            pdf_page_2['Spells 1023'] = firstlvl
+            pdf_page_2['SlotsTotal'] = 2
+
             allowed_spells = 4
 
         if level >= 2:
             # c = 2, 1 = 3
             class_features += 'Jack of All Trades\nSong of Rest\n'
-            spell_slots['1'] = 3
+            spell_slots[1] = 3
+            firstlvl = random.choice(spell.bard_1)
+            spells.bard_1.remove(firstlvl)
+            pdf_page_2['Spells 1024'] = firstlvl
+            firstlvl = random.choice(spell.bard_1)
+            spells.bard_1.remove(firstlvl)
+            pdf_page_2['Spells 1025'] = firstlvl
+            pdf_page_2['SlotsTotal 19'] = 3
             allowed_spells = 5
 
         if level >= 3:
@@ -237,63 +260,109 @@ def dictfiller(level):
             else:
                 bard_college_str = 'College of Lore'
                 class_features += 'Bard College:\n -> ' + bard_college_str + '\nCutting Words\n'
-            spell_slots['1'] += 1
-            spell_slots['2'] = 2
+            spell_slots[1] += 1
+            secondlvl = random.choice(spell.bard_2)
+            spells.bard_2.remove(secondlvl)
+            pdf_page_2['Spells 1046'] = secondlvl
+            spell_slots[2] = 2
+            secondlvl = random.choice(spell.bard_2)
+            spells.bard_2.remove(secondlvl)
+            pdf_page_2['Spells 1034'] = secondlvl
+            pdf_page_2['SlotsTotal 20'] = 2
             allowed_spells = 6
 
         if level >= 4:
             # c = 3, 1 = 4, 2 = 3
-            spell_slots['c'] += 1
-            spell_slots['2'] += 1
+            spell_slots[0] += 1
+            cant = random.choice(spells.bard_0)
+            spells.bard_0.remove(cant)
+            pdf_page_2['Spells 1017'] = cant
+            spell_slots[2] += 1
             allowed_spells = 7
 
         if level >= 5:
             # c = 3, 1 = 4, 2 = 3, 3 = 2
             allowed_spells = 8
-            spell_slots['3'] = 2
+            spell_slots[3] = 2
+            thirdlvl = random.choice(spells.bard_3)
+            spells.bard_3.remove(thirdlvl)
+            pdf_page_2['Spells 1048'] = thirdlvl
             class_features += 'Bardic Inspiration\nFont of Inspiration\n'
 
         if level >= 6:
             # c = 3, 1 = 4, 2 = 3, 3 = 3
-            spell_slots['3'] += 1
+            spell_slots[3] += 1
             allowed_spells = 9
+            thirdlvl = random.choice(spells.bard_3)
+            spells.bard_3.remove(thirdlvl)
+            pdf_page_2['Spells 1047'] = thirdlvl
             if bard_college == 0:
                 class_features += 'Undeniable Logic\nCountercharm\n'
             elif bard_college == 1:
                 class_features += 'Additional Magic Secrets\nCountercharm\n'
 
         if level >= 7:
-            spell_slots['4'] += 1
+            spell_slots[4] += 1
+            fourthlvl = random.choice(spells.bard_4)
+            spells.bard_4.remove(fourthlvl)
+            pdf_page_2['Spells 1061'] = fourthlvl
             allowed_spells = 10
 
         if level >= 8:
-            spell_slots['4'] += 1
+            spell_slots[4] += 1
+            fourthlvl = random.choice(spells.bard_4)
+            spells.bard_4.remove(fourthlvl)
+            pdf_page_2['Spells 1060'] = fourthlvl
             allowed_spells = 11
 
         if level >= 9:
-            spell_slots['4'] += 1
-            spell_slots['5'] = 1
+            spell_slots[4] += 1
+            spell_slots[5] = 1
+            fifthlvl = random.choice(spells.bard_5)
+            spells.bard_5.remove(fifthlvl)
+            pdf_page_2['Spells 1074'] = fifthlvl
             allowed_spells = 12
             class_features += 'Song of Rest\n'
 
         if level >= 10:
-            spell_slots['c'] += 1
-            spell_slots['5'] += 1
+            spell_slots[0] += 1
+            cant = random.choice(spells.bard_0)
+            spells.bard_0.remove(cant)
+            pdf_page_2['Spells 1018'] = cant
+            spell_slots[5] += 1
+            fifthlvl = random.choice(spells.bard_5)
+            spells.bard_5.remove(fifthlvl)
+            pdf_page_2['Spells 1073'] = fifthlvl
+            fourthlvl = random.choice(spells.bard_4)
+            spells.bard_4.remove(fourthlvl)
+            pdf_page_2['Spells 1062'] = fourthlvl
+
             allowed_spells = 14
 
         if level >= 11:
-            spell_slots['6'] = 1
+            spell_slots[6] = 1
+            sixthlvl = random.choice(spells.bard_6)
+            spells.bard_6.remove(sixthlvl)
+            pdf_page_2['Spells 1083'] = sixthlvl
+
             allowed_spells = 15
 
-        if level >= 12:
-            do_nothing = 1
 
         if level >= 13:
             allowed_spells = 16
-            spell_slots['7'] = 1
+            spell_slots[7] = 1
+            seventhlvl = random.choice(spells.bard_7)
+            spells.bard_7.remove(seventhlvl)
+            pdf_page_2['Spells 1092'] = seventhlvl
 
         if level >= 14:
             allowed_spells = 18
+            thirdlvl = random.choice(spells.bard_3)
+            spells.bard_3.remove(thirdlvl)
+            pdf_page_2['Spells 1049'] = thirdlvl
+            secondlvl = random.choice(spell.bard_2)
+            spells.bard_2.remove(secondlvl)
+            pdf_page_2['Spells 1035'] = secondlvl
             if primal_path == 0:
                 class_features += 'Infectious Inspiration\n'
             elif primal_path == 1:
@@ -301,25 +370,38 @@ def dictfiller(level):
 
         if level >= 15:
             allowed_spells = 19
-            spell_slots['8'] = 1
-
-        if level >= 16:
-            allowed_spells = 19
+            spell_slots[8] = 1
+            eigthlvl = random.choice(spell.bard_8)
+            spells.bard_8.remove(eighthlvl)
+            pdf_page_2['Spells 10101'] = eighthlvl
 
         if level >= 17:
             allowed_spells = 20
-            spell_slots['9'] = 1
+            spell_slots[9] = 1
+            ninthlvl = random.choice(spell.bard_9)
+            spells.bard_9.remove(ninthlvl)
+            pdf_page_2['Spells 10108'] = ninthlvl
 
         if level >= 18:
             allowed_spells = 22
-            spell_slots['5'] += 1
+            spell_slots[5] += 1
+            fifthlvl = random.choice(spells.bard_5)
+            spells.bard_5.remove(fifthlvl)
+            pdf_page_2['Spells 1075'] = fifthlvl
+
 
         if level >= 19:
-            spell_slots['6'] += 1
+            spell_slots[6] += 1
+            fifthlvl = random.choice(spells.bard_6)
+            spells.bard_6.remove(fifthlvl)
+            pdf_page_2['Spells 1082'] = fifthlvl
 
         if level >= 20:
-            spell_slots['7'] += 1
+            spell_slots[7] += 1
             class_features += 'Superior Inspiration\n'
+            seventhlvl = random.choice(spells.bard_7)
+            spells.bard_7.remove(seventhlvl)
+            pdf_page_2['Spells 1091'] = seventhlvl
 
         #Weapon selection
         wind = random.randint(0, len(weapons.bard_weapons)-1)
@@ -352,64 +434,64 @@ def dictfiller(level):
         if level >= 1:
             class_features = 'Spellcasting\nDivine Domain: Life\n'
             # c = 2, 1 = 2
-            spell_slots['c'] = 2
-            spell_slots['1'] = 2
+            spell_slots[0] = 2
+            spell_slots[1] = 2
             allowed_spells = 4
 
         if level >= 2:
             # c = 2, 1 = 3
             class_features += 'Channel Divinity\nDisciple of Life\n'
-            spell_slots['1'] = 3
+            spell_slots[1] = 3
             allowed_spells = 5
 
         if level >= 3:
             #c = 2, 1 = 4, 2 = 2
-            spell_slots['1'] += 1
-            spell_slots['2'] = 2
+            spell_slots[1] += 1
+            spell_slots[2] = 2
             allowed_spells = 6
 
         if level >= 4:
             # c = 3, 1 = 4, 2 = 3
-            spell_slots['c'] += 1
-            spell_slots['2'] += 1
+            spell_slots[0] += 1
+            spell_slots[2] += 1
             allowed_spells = 7
 
         if level >= 5:
             # c = 3, 1 = 4, 2 = 3, 3 = 2
             allowed_spells = 8
-            spell_slots['3'] = 2
+            spell_slots[3] = 2
             class_features += 'Destroy Undead\n'
 
         if level >= 6:
             # c = 3, 1 = 4, 2 = 3, 3 = 3
-            spell_slots['3'] += 1
+            spell_slots[3] += 1
             allowed_spells = 9
             class_features += 'Blessed Healer\n'
 
         if level >= 7:
-            spell_slots['4'] += 1
+            spell_slots[4] += 1
             allowed_spells = 10
 
         if level >= 8:
-            spell_slots['4'] += 1
+            spell_slots[4] += 1
             allowed_spells = 11
             class_features += 'Divine Strike\n'
 
 
         if level >= 9:
-            spell_slots['4'] += 1
-            spell_slots['5'] = 1
+            spell_slots[4] += 1
+            spell_slots[5] = 1
             allowed_spells = 12
 
 
         if level >= 10:
-            spell_slots['c'] += 1
-            spell_slots['5'] += 1
+            spell_slots[0] += 1
+            spell_slots[5] += 1
             allowed_spells = 14
             class_features += 'Divine Intervention\n'
 
         if level >= 11:
-            spell_slots['6'] = 1
+            spell_slots[6] = 1
             allowed_spells = 15
 
         if level >= 12:
@@ -417,32 +499,32 @@ def dictfiller(level):
 
         if level >= 13:
             allowed_spells = 16
-            spell_slots['7'] = 1
+            spell_slots[7] = 1
 
         if level >= 14:
             allowed_spells = 18
 
         if level >= 15:
             allowed_spells = 19
-            spell_slots['8'] = 1
+            spell_slots[8] = 1
 
         if level >= 16:
             allowed_spells = 19
 
         if level >= 17:
             allowed_spells = 20
-            spell_slots['9'] = 1
+            spell_slots[9] = 1
             class_features += 'Supreme Healing\n'
 
         if level >= 18:
             allowed_spells = 22
-            spell_slots['5'] += 1
+            spell_slots[5] += 1
 
         if level >= 19:
-            spell_slots['6'] += 1
+            spell_slots[6] += 1
 
         if level >= 20:
-            spell_slots['7'] += 1
+            spell_slots[7] += 1
             class_features += 'Automatic Divine Intervention\n'
 
         # armor selection
@@ -482,8 +564,8 @@ def dictfiller(level):
         if level >= 1:
             class_features = 'Spellcasting\nDruidic\n'
             # c = 2, 1 = 2
-            spell_slots['c'] = 2
-            spell_slots['1'] = 2
+            spell_slots[0] = 2
+            spell_slots[1] = 2
             allowed_spells = 4
 
         if level >= 2:
@@ -492,7 +574,7 @@ def dictfiller(level):
             if druid_circle == 0:
                 druid_circle_str = 'Dreams'
                 class_features += 'Wild Shape\nDruid Circle:\n -> ' + druid_circle_str + '\nBalm of the Summer Court\n'
-                spell_slots['c'] += 1
+                spell_slots[0] += 1
             elif druid_circle == 1:
                 druid_circle_str = 'Moon'
                 class_features += 'Combat Wild Shape\nDruid Circle:\n -> ' + druid_circle_str + '\nCircle Forms\n'
@@ -502,29 +584,29 @@ def dictfiller(level):
             elif druid_circle == 3:
                 druid_circle_str = 'Spores'
                 class_features += 'Wild Shape\nDruid Circle:\n -> ' + druid_circle_str + '\nHalo of Spores\nSymbiotic Entity\n'
-            spell_slots['1'] = 3
+            spell_slots[1] = 3
             allowed_spells = 5
 
         if level >= 3:
             #c = 2, 1 = 4, 2 = 2
-            spell_slots['1'] += 1
-            spell_slots['2'] = 2
+            spell_slots[1] += 1
+            spell_slots[2] = 2
             allowed_spells = 6
 
         if level >= 4:
             # c = 3, 1 = 4, 2 = 3
-            spell_slots['c'] += 1
-            spell_slots['2'] += 1
+            spell_slots[0] += 1
+            spell_slots[2] += 1
             allowed_spells = 7
 
         if level >= 5:
             # c = 3, 1 = 4, 2 = 3, 3 = 2
             allowed_spells = 8
-            spell_slots['3'] = 2
+            spell_slots[3] = 2
 
         if level >= 6:
             # c = 3, 1 = 4, 2 = 3, 3 = 3
-            spell_slots['3'] += 1
+            spell_slots[3] += 1
             allowed_spells = 9
             if druid_circle == 0:
                 class_features += 'Hearth of Moonlight and Shadow\n'
@@ -536,22 +618,22 @@ def dictfiller(level):
                 class_features += 'Fungal Infestation\n'
 
         if level >= 7:
-            spell_slots['4'] += 1
+            spell_slots[4] += 1
             allowed_spells = 10
 
         if level >= 8:
-            spell_slots['4'] += 1
+            spell_slots[4] += 1
             allowed_spells = 11
 
         if level >= 9:
-            spell_slots['4'] += 1
-            spell_slots['5'] = 1
+            spell_slots[4] += 1
+            spell_slots[5] = 1
             allowed_spells = 12
 
 
         if level >= 10:
-            spell_slots['c'] += 1
-            spell_slots['5'] += 1
+            spell_slots[0] += 1
+            spell_slots[5] += 1
             allowed_spells = 14
             if druid_circle == 0:
                 class_features += 'Hidden Paths\n'
@@ -563,7 +645,7 @@ def dictfiller(level):
                 class_features += 'Spreading Spores\n'
 
         if level >= 11:
-            spell_slots['6'] = 1
+            spell_slots[6] = 1
             allowed_spells = 15
 
         if level >= 12:
@@ -571,7 +653,7 @@ def dictfiller(level):
 
         if level >= 13:
             allowed_spells = 16
-            spell_slots['7'] = 1
+            spell_slots[7] = 1
 
         if level >= 14:
             allowed_spells = 18
@@ -586,26 +668,26 @@ def dictfiller(level):
 
         if level >= 15:
             allowed_spells = 19
-            spell_slots['8'] = 1
+            spell_slots[8] = 1
 
         if level >= 16:
             allowed_spells = 19
 
         if level >= 17:
             allowed_spells = 20
-            spell_slots['9'] = 1
+            spell_slots[9] = 1
 
         if level >= 18:
             allowed_spells = 22
-            spell_slots['5'] += 1
+            spell_slots[5] += 1
             class_features += 'Timeless Body\nBeast Spells\n'
 
 
         if level >= 19:
-            spell_slots['6'] += 1
+            spell_slots[6] += 1
 
         if level >= 20:
-            spell_slots['7'] += 1
+            spell_slots[7] += 1
             class_features += 'Arch Druid\n'
 
 
@@ -696,8 +778,8 @@ def dictfiller(level):
                 class_features += 'Combat Superiority\nStudent of War\n'
             elif fighter_ma == 2:
                 class_features += 'Spellcasting\n'
-                spell_slots['c'] = 2
-                spell_slots['1'] = 2
+                spell_slots[0] = 2
+                spell_slots[1] = 2
                 allowed_spells = 3
 
         if level >= 4:
@@ -721,8 +803,8 @@ def dictfiller(level):
                 maneuver_str += m1 + '\n' + m2 + '\n' + m3 + '\n'
             elif fighter_ma == 2:
                 class_features += 'War Magic\n'
-                spell_slots['1'] = 4
-                spell_slots['2'] = 2
+                spell_slots[1] = 4
+                spell_slots[2] = 2
                 allowed_spells = 5
 
         if level >= 8:
@@ -743,11 +825,11 @@ def dictfiller(level):
             elif fighter_ma == 2:
                 class_features += 'Eldritch Strike\n'
                 allowed_spells = 7
-                spell_slots['c'] = 3
-                spell_slots['2'] = 3
+                spell_slots[0] = 3
+                spell_slots[2] = 3
 
         if level >= 11:
-            spell_slots['6'] = 1
+            spell_slots[6] = 1
             allowed_spells = 8
 
         if level >= 12:
@@ -756,7 +838,7 @@ def dictfiller(level):
         if level >= 13:
             if fighter_ma == 2:
                 allowed_spells = 9
-                spell_slots['3'] = 2
+                spell_slots[3] = 2
 
         if level >= 14:
             allowed_spells = 10
@@ -778,7 +860,7 @@ def dictfiller(level):
 
         if level >= 16:
             allowed_spells = 11
-            spell_slots['3'] = 3
+            spell_slots[3] = 3
 
         if level >= 18:
             if fighter == 0:
@@ -788,7 +870,7 @@ def dictfiller(level):
 
 
         if level >= 19:
-            spell_slots['4'] = 1
+            spell_slots[4] = 1
             allowed_spells = 12
 
         if level >= 20:
@@ -909,12 +991,12 @@ def dictfiller(level):
             class_features += 'Evasion\nStillness of Mind\n'
 
         if level >= 8:
-            spell_slots['4'] += 1
+            spell_slots[4] += 1
             allowed_spells = 11
 
         if level >= 10:
-            spell_slots['c'] += 1
-            spell_slots['5'] += 1
+            spell_slots[0] += 1
+            spell_slots[5] += 1
             allowed_spells = 14
             class_features += 'Purity of Body\n'
 
@@ -1003,11 +1085,11 @@ def dictfiller(level):
             fighting_style = random.choice(fighting_styles)
             fighting_styles.remove(fighting_style)
             class_features += 'Fighting Style: ' + fighting_style + '\nSpellcasting\nDivine Smite\n'
-            spell_slots['1'] = 2
+            spell_slots[1] = 2
 
         if level >= 3:
             #c = 2, 1 = 4, 2 = 2
-            spell_slots['1'] = 3
+            spell_slots[1] = 3
             sacred_oath = random.randint(0, 5)
             if sacred_oath == 0:
                 sacred_oath_str = 'Ancients'
@@ -1034,15 +1116,15 @@ def dictfiller(level):
 
         if level >= 5:
             class_features += 'Extra Attack\n'
-            spell_slots['1'] = 4
-            spell_slots['2'] = 2
+            spell_slots[1] = 4
+            spell_slots[2] = 2
 
 
         if level >= 6:
             class_features += 'Aura of Protection\n'
 
         if level >= 7:
-            spell_slots['2'] = 3
+            spell_slots[2] = 3
             if sacred_oath == 0:
                 class_features += 'Aura of Warding\n'
             elif sacred_oath == 1:
@@ -1060,26 +1142,26 @@ def dictfiller(level):
             do_nothing = 1
 
         if level >= 9:
-            spell_slots['3'] = 2
+            spell_slots[3] = 2
 
         if level >= 10:
             class_features += 'Aura of Courage\n'
 
         if level >= 11:
-            spell_slots['3'] = 3
+            spell_slots[3] = 3
 
 
         if level >= 12:
             do_nothing = 1
 
         if level >= 13:
-            spell_slots['4'] = 1
+            spell_slots[4] = 1
 
         if level >= 14:
             class_features += 'Cleansing Touch\n'
 
         if level >= 15:
-            spell_slots['4'] = 2
+            spell_slots[4] = 2
             if sacred_oath == 0:
                 class_features += 'Undying Sentinel\n'
             elif sacred_oath == 1:
@@ -1097,15 +1179,15 @@ def dictfiller(level):
             do_nothing = 1
 
         if level >= 17:
-            spell_slots['4'] = 3
-            spell_slots['5'] = 1
+            spell_slots[4] = 3
+            spell_slots[5] = 1
 
 
         if level >= 18:
             class_features += 'Empty Body\n'
 
         if level >= 19:
-            spell_slots['5'] = 2
+            spell_slots[5] = 2
 
         if level >= 20:
             if sacred_oath == 0:
@@ -1161,11 +1243,22 @@ def dictfiller(level):
             fighting_style = random.choice(fighting_styles)
             fighting_styles.remove(fighting_style)
             class_features += 'Fighting Style: ' + fighting_style + 'Spellcasting\n'
-            spell_slots['1'] = 2
+            spell_slots[1] = 2
+            firstlvl = random.choice(spells.ranger_1)
+            spells.ranger_1.remove(firstlvl)
+            pdf_page_2['Spells 1015'] = firstlvl
+            firstlvl = random.choice(spells.ranger_1)
+            spells.ranger_1.remove(firstlvl)
+            pdf_page_2['Spells 1023'] = firstlvl
+            pdf_page_2['SlotsTotal 19'] = 2
 
         if level >= 3:
             #c = 2, 1 = 4, 2 = 2
-            spell_slots['1'] = 3
+            spell_slots[1] = 3
+            firstlvl = random.choice(spells.ranger_1)
+            spells.ranger_1.remove(firstlvl)
+            pdf_page_2['Spells 1024'] = firstlvl
+            pdf_page_2['SlotsTotal 19'] = 3
             ranger_at = random.randint(0, 1)
             if ranger_at == 0:
                 ranger_at_str = 'Hunter'
@@ -1175,20 +1268,21 @@ def dictfiller(level):
                 ranger_at_str = 'Beast Master'
                 class_features += 'Primeval Awareness\nRanger Conclave:\n -> ' + ranger_at_str + '\n' + random.choice(['Colossus Slayer', 'Giant Killer', 'Horde Breaker']) + '\n'
 
-        if level >= 4:
-            do_nothing = 1
-
         if level >= 5:
             class_features += 'Extra Attack\n'
-            spell_slots['1'] = 4
-            spell_slots['2'] = 2
+            spell_slots[1] = 4
+            spell_slots[2] = 2
+            secondlvl = random.choice(spells.ranger_2)
+            spells.ranger_2.remove(secondlvl)
+            pdf_page_2['Spells 1046'] = secondlvl
+            pdf_page_2['SlotsTotal 20'] = 2
 
 
         if level >= 6:
             class_features += 'Aura of Protection\n'
 
         if level >= 7:
-            spell_slots['2'] = 3
+            spell_slots[2] = 3
             if ranger_at == 0:
                 class_features += random.choice(['Escape the Horde', 'Multiattack Defense', 'Steel Will']) + '\n'
             elif ranger_at == 1:
@@ -1200,13 +1294,13 @@ def dictfiller(level):
 
         if level >= 9:
 
-            spell_slots['3'] = 2
+            spell_slots[3] = 2
 
         if level >= 10:
             class_features += 'Hide in Plain Sight\n'
 
         if level >= 11:
-            spell_slots['3'] = 3
+            spell_slots[3] = 3
             if ranger_at == 0:
                 class_features += 'Multiattack\n'
             elif ranger_at == 1:
@@ -1217,13 +1311,13 @@ def dictfiller(level):
             do_nothing = 1
 
         if level >= 13:
-            spell_slots['4'] = 1
+            spell_slots[4] = 1
 
         if level >= 14:
             class_features += 'Vanish\n'
 
         if level >= 15:
-            spell_slots['4'] = 2
+            spell_slots[4] = 2
             if ranger_at == 0:
                 class_features += random.choice(['Evasion', 'Stand Against the Tide', 'Uncanny Dodge']) + '\n'
             elif ranger_at == 1:
@@ -1233,15 +1327,15 @@ def dictfiller(level):
             do_nothing = 1
 
         if level >= 17:
-            spell_slots['4'] = 3
-            spell_slots['5'] = 1
+            spell_slots[4] = 3
+            spell_slots[5] = 1
 
 
         if level >= 18:
             class_features += 'Feral Senses\n'
 
         if level >= 19:
-            spell_slots['5'] = 2
+            spell_slots[5] = 2
 
         if level >= 20:
             class_features += 'Foe Slayer'
@@ -1287,7 +1381,7 @@ def dictfiller(level):
         if level >= 3:
             #c = 2, 1 = 4, 2 = 2
             allowed_spells = 3
-            spell_slots['1'] = 2
+            spell_slots[1] = 2
             rogue_at = random.randint(0, 2)
             if rogue_at == 0:
                 rogue_at_str = 'Thief'
@@ -1302,7 +1396,7 @@ def dictfiller(level):
 
         if level >= 4:
             allowed_spells = 4
-            spell_slots['1'] = 3
+            spell_slots[1] = 3
 
         if level >= 5:
             class_features += 'Uncanny Dodge\n'
@@ -1313,8 +1407,8 @@ def dictfiller(level):
 
         if level >= 7:
             allowed_spells = 5
-            spell_slots['2'] = 3
-            spell_slots['1'] = 4
+            spell_slots[2] = 3
+            spell_slots[1] = 4
             class_features += 'Evasion\n'
 
         if level >= 8:
@@ -1333,17 +1427,17 @@ def dictfiller(level):
 
         if level >= 10:
             allowed_spells = 7
-            spell_slots['2'] = 3
+            spell_slots[2] = 3
             class_features += 'Hide in Plain Sight\n'
 
         if level >= 11:
             allowed_spells = 8
-            spell_slots['3'] = 3
+            spell_slots[3] = 3
             class_features += 'Reliable Talent\n'
 
         if level >= 13:
             allowed_spells = 9
-            spell_slots['3'] = 2
+            spell_slots[3] = 2
             if rogue_at == 0:
                 class_features += 'Use Magic Device\n'
             elif rogue_at == 1:
@@ -1361,7 +1455,7 @@ def dictfiller(level):
 
         if level >= 16:
             allowed_spells = 11
-            spell_slots['3'] = 3
+            spell_slots[3] = 3
 
         if level >= 17:
             if rogue_at == 0:
@@ -1377,7 +1471,7 @@ def dictfiller(level):
 
         if level >= 19:
             allowed_spells = 12
-            spell_slots['4'] = 1
+            spell_slots[4] = 1
 
         if level >= 20:
             allowed_spells = 13
@@ -1428,8 +1522,8 @@ def dictfiller(level):
         #levelling
         if level >= 1:
             # c = 2, 1 = 2
-            spell_slots['c'] = 4
-            spell_slots['1'] = 2
+            spell_slots[0] = 4
+            spell_slots[1] = 2
             allowed_spells = 2
             sorc_orig = random.randint(0, 2)
             if sorc_orig == 0:
@@ -1446,7 +1540,7 @@ def dictfiller(level):
         if level >= 2:
             # c = 2, 1 = 3
             class_features += 'Font of Magic\nSorcery Points\nFlexible Casting\n'
-            spell_slots['1'] = 3
+            spell_slots[1] = 3
             allowed_spells = 3
 
         if level >= 3:
@@ -1456,24 +1550,24 @@ def dictfiller(level):
             m2 = random.choice(metamagic_mods)
             metamagic_mods.remove(m2)
             meta_magics += 'Metamagic: \n ' + m1 + '\n ' + m2 + '\n '
-            spell_slots['1'] += 1
-            spell_slots['2'] = 2
+            spell_slots[1] += 1
+            spell_slots[2] = 2
             allowed_spells = 4
 
         if level >= 4:
             # c = 3, 1 = 4, 2 = 3
-            spell_slots['c'] += 1
-            spell_slots['2'] += 1
+            spell_slots[0] += 1
+            spell_slots[2] += 1
             allowed_spells = 5
 
         if level >= 5:
             # c = 3, 1 = 4, 2 = 3, 3 = 2
             allowed_spells = 6
-            spell_slots['3'] = 2
+            spell_slots[3] = 2
 
         if level >= 6:
             # c = 3, 1 = 4, 2 = 3, 3 = 3
-            spell_slots['3'] += 1
+            spell_slots[3] += 1
             allowed_spells = 7
             if sorc_orig == 0:
                 class_features += 'Elemental Affinity\n'
@@ -1483,32 +1577,32 @@ def dictfiller(level):
                 class_features += 'Hound of Ill Omen\n'
 
         if level >= 7:
-            spell_slots['4'] += 1
+            spell_slots[4] += 1
             allowed_spells = 8
 
         if level >= 8:
-            spell_slots['4'] += 1
+            spell_slots[4] += 1
             allowed_spells = 9
 
         if level >= 9:
-            spell_slots['4'] += 1
-            spell_slots['5'] = 1
+            spell_slots[4] += 1
+            spell_slots[5] = 1
             allowed_spells = 10
 
 
         if level >= 10:
-            spell_slots['c'] += 1
-            spell_slots['5'] += 1
+            spell_slots[0] += 1
+            spell_slots[5] += 1
             allowed_spells = 11
 
 
         if level >= 11:
-            spell_slots['6'] = 1
+            spell_slots[6] = 1
             allowed_spells = 12
 
         if level >= 13:
             allowed_spells = 13
-            spell_slots['7'] = 1
+            spell_slots[7] = 1
 
         if level >= 14:
             if sorc_orig == 0:
@@ -1520,14 +1614,14 @@ def dictfiller(level):
 
         if level >= 15:
             allowed_spells = 14
-            spell_slots['8'] = 1
+            spell_slots[8] = 1
 
         if level >= 17:
             allowed_spells = 15
-            spell_slots['9'] = 1
+            spell_slots[9] = 1
 
         if level >= 18:
-            spell_slots['5'] += 1
+            spell_slots[5] += 1
             if sorc_orig == 0:
                 class_features += 'Draconic Presence\n'
             elif sorc_orig == 1:
@@ -1536,10 +1630,10 @@ def dictfiller(level):
                 class_features += 'Umbral Form\n'
 
         if level >= 19:
-            spell_slots['6'] += 1
+            spell_slots[6] += 1
 
         if level >= 20:
-            spell_slots['7'] += 1
+            spell_slots[7] += 1
             class_features += 'Sorcerous Restoration\n'
 
         #Weapon selection
@@ -1591,7 +1685,7 @@ def dictfiller(level):
         if level >= 2:
             # c = 2, 1 = 3
             class_features += 'Eldritch Evocation\n'
-            spell_slots['1'] = 3
+            spell_slots[1] = 3
             allowed_spells = 3
 
         if level >= 3:
@@ -1600,24 +1694,24 @@ def dictfiller(level):
             m1 = random.choice(pact_boon)
             pact_boon.remove(m1)
             class_features += 'Pact Boon:\n -> ' + m1 + '\n'
-            spell_slots['1'] += 1
-            spell_slots['2'] = 2
+            spell_slots[1] += 1
+            spell_slots[2] = 2
             allowed_spells = 4
 
         if level >= 4:
             # c = 3, 1 = 4, 2 = 3
-            spell_slots['c'] += 1
-            spell_slots['2'] += 1
+            spell_slots[0] += 1
+            spell_slots[2] += 1
             allowed_spells = 5
 
         if level >= 5:
             # c = 3, 1 = 4, 2 = 3, 3 = 2
             allowed_spells = 6
-            spell_slots['3'] = 2
+            spell_slots[3] = 2
 
         if level >= 6:
             # c = 3, 1 = 4, 2 = 3, 3 = 3
-            spell_slots['3'] += 1
+            spell_slots[3] += 1
             allowed_spells = 7
             if patron == 0:
                 class_features += 'Misty Escape\n'
@@ -1629,22 +1723,22 @@ def dictfiller(level):
                 class_features += 'Entropic Ward\n'
 
         if level >= 7:
-            spell_slots['4'] += 1
+            spell_slots[4] += 1
             allowed_spells = 8
 
         if level >= 8:
-            spell_slots['4'] += 1
+            spell_slots[4] += 1
             allowed_spells = 9
 
         if level >= 9:
-            spell_slots['4'] += 1
-            spell_slots['5'] = 1
+            spell_slots[4] += 1
+            spell_slots[5] = 1
             allowed_spells = 10
 
 
         if level >= 10:
-            spell_slots['c'] += 1
-            spell_slots['5'] += 1
+            spell_slots[0] += 1
+            spell_slots[5] += 1
             allowed_spells = 11
             if patron == 0:
                 class_features += 'Beguiling Defenses\n'
@@ -1658,12 +1752,12 @@ def dictfiller(level):
 
         if level >= 11:
             class_features += 'Mystic Arcanum\n'
-            spell_slots['6'] = 1
+            spell_slots[6] = 1
             allowed_spells = 12
 
         if level >= 13:
             allowed_spells = 13
-            spell_slots['7'] = 1
+            spell_slots[7] = 1
 
         if level >= 14:
             if patron == 0:
@@ -1678,23 +1772,23 @@ def dictfiller(level):
 
         if level >= 15:
             allowed_spells = 14
-            spell_slots['8'] = 1
+            spell_slots[8] = 1
 
         if level >= 16:
             do_nothing = 19
 
         if level >= 17:
             allowed_spells = 15
-            spell_slots['9'] = 1
+            spell_slots[9] = 1
 
         if level >= 18:
-            spell_slots['5'] += 1
+            spell_slots[5] += 1
 
         if level >= 19:
-            spell_slots['6'] += 1
+            spell_slots[6] += 1
 
         if level >= 20:
-            spell_slots['7'] += 1
+            spell_slots[7] += 1
             class_features += 'Eldritch Master\n'
 
         #Weapon selection
@@ -1725,14 +1819,14 @@ def dictfiller(level):
         #levelling
         if level >= 1:
             # c = 2, 1 = 2
-            spell_slots['c'] = 4
-            spell_slots['1'] = 2
+            spell_slots[0] = 4
+            spell_slots[1] = 2
             allowed_spells = 2
             class_features = 'Spellcasting\nSpellbook\n'
 
         if level >= 2:
             # c = 2, 1 = 3
-            spell_slots['1'] = 3
+            spell_slots[1] = 3
             allowed_spells = 3
             tradition = random.randint(0, 12)
 
@@ -1781,21 +1875,21 @@ def dictfiller(level):
                 class_features += 'Arcane Tradition:\n -> ' + tradition_str + '\nArcane Deflection\nTactical Wit\n'
 
         if level >= 3:
-            spell_slots['1'] += 1
-            spell_slots['2'] = 2
+            spell_slots[1] += 1
+            spell_slots[2] = 2
             allowed_spells = 4
 
         if level >= 4:
-            spell_slots['c'] += 1
-            spell_slots['2'] += 1
+            spell_slots[0] += 1
+            spell_slots[2] += 1
             allowed_spells = 5
 
         if level >= 5:
             allowed_spells = 6
-            spell_slots['3'] = 2
+            spell_slots[3] = 2
 
         if level >= 6:
-            spell_slots['3'] += 1
+            spell_slots[3] += 1
             allowed_spells = 7
             if tradition == 0:
                 class_features += 'Projected Ward\n'
@@ -1826,22 +1920,22 @@ def dictfiller(level):
 
 
         if level >= 7:
-            spell_slots['4'] += 1
+            spell_slots[4] += 1
             allowed_spells = 8
 
         if level >= 8:
-            spell_slots['4'] += 1
+            spell_slots[4] += 1
             allowed_spells = 9
 
         if level >= 9:
-            spell_slots['4'] += 1
-            spell_slots['5'] = 1
+            spell_slots[4] += 1
+            spell_slots[5] = 1
             allowed_spells = 10
 
 
         if level >= 10:
-            spell_slots['c'] += 1
-            spell_slots['5'] += 1
+            spell_slots[0] += 1
+            spell_slots[5] += 1
             allowed_spells = 11
             if tradition == 0:
                 class_features += 'Improved Abjuration\n'
@@ -1872,12 +1966,12 @@ def dictfiller(level):
 
 
         if level >= 11:
-            spell_slots['6'] = 1
+            spell_slots[6] = 1
             allowed_spells = 12
 
         if level >= 13:
             allowed_spells = 13
-            spell_slots['7'] = 1
+            spell_slots[7] = 1
 
         if level >= 14:
             if tradition == 0:
@@ -1910,21 +2004,21 @@ def dictfiller(level):
 
         if level >= 15:
             allowed_spells = 14
-            spell_slots['8'] = 1
+            spell_slots[8] = 1
 
         if level >= 17:
             allowed_spells = 15
-            spell_slots['9'] = 1
+            spell_slots[9] = 1
 
         if level >= 18:
-            spell_slots['5'] += 1
+            spell_slots[5] += 1
             class_features += 'Spell Mastery\n'
 
         if level >= 19:
-            spell_slots['6'] += 1
+            spell_slots[6] += 1
 
         if level >= 20:
-            spell_slots['7'] += 1
+            spell_slots[7] += 1
             class_features += 'Signature Spells\n'
 
         #Weapon selection
@@ -2151,6 +2245,131 @@ data_dict = {
    'PP': '',
    'Equipment': '',
    'Features and Traits': '',
+}
+
+pdf_page_2 = {
+'Spellcasting Class 2': '',
+'SpellcastingAbility 2': '',
+'SpellSaveDC  2': '',
+'SpellAtkBonus 2': '',
+'Spells 1014': '',
+'Spells 1016': '',
+'Spells 1017': '',
+'Spells 1018': '',
+'Spells 1019': '',
+'Spells 1020': '',
+'Spells 1021': '',
+'Spells 1022': '',
+'SlotsTotal 19': '',
+'SlotsRemaining 19': '',
+'Spells 1015': '',
+'Spells 1023': '',
+'Spells 1024': '',
+'Spells 1025': '',
+'Spells 1026': '',
+'Spells 1027': '',
+'Spells 1028': '',
+'Spells 1029': '',
+'Spells 1030': '',
+'Spells 1031': '',
+'Spells 1032': '',
+'Spells 1033': '',
+'SlotsTotal 20': '',
+'SlotsRemaining 20': '',
+'Spells 1046': '',
+'Spells 1034': '',
+'Spells 1035': '',
+'Spells 1036': '',
+'Spells 1037': '',
+'Spells 1038': '',
+'Spells 1039': '',
+'Spells 1040': '',
+'Spells 1041': '',
+'Spells 1042': '',
+'Spells 1043': '',
+'Spells 1044': '',
+'Spells 1045': '',
+'SlotsTotal 21': '',
+'SlotsRemaining 21': '',
+'Spells 1048': '',
+'Spells 1047': '',
+'Spells 1049': '',
+'Spells 1050': '',
+'Spells 1051': '',
+'Spells 1052': '',
+'Spells 1053': '',
+'Spells 1054': '',
+'Spells 1055': '',
+'Spells 1056': '',
+'Spells 1057': '',
+'Spells 1058': '',
+'Spells 1059': '',
+'SlotsTotal 22': '',
+'SlotsRemaining 22': '',
+'Spells 1061': '',
+'Spells 1060': '',
+'Spells 1062': '',
+'Spells 1063': '',
+'Spells 1064': '',
+'Spells 1065': '',
+'Spells 1066': '',
+'Spells 1067': '',
+'Spells 1068': '',
+'Spells 1069': '',
+'Spells 1070': '',
+'Spells 1071': '',
+'Spells 1072': '',
+'SlotsTotal 23': '',
+'SlotsRemaining 23': '',
+'Spells 1074': '',
+'Spells 1073': '',
+'Spells 1075': '',
+'Spells 1076': '',
+'Spells 1077': '',
+'Spells 1078': '',
+'Spells 1079': '',
+'Spells 1080': '',
+'Spells 1081': '',
+'SlotsTotal 24': '',
+'SlotsRemaining 24': '',
+'Spells 1083': '',
+'Spells 1082': '',
+'Spells 1084': '',
+'Spells 1085': '',
+'Spells 1086': '',
+'Spells 1087': '',
+'Spells 1088': '',
+'Spells 1089': '',
+'Spells 1090': '',
+'SlotsTotal 25': '',
+'SlotsRemaining 25': '',
+'Spells 1092': '',
+'Spells 1091': '',
+'Spells 1093': '',
+'Spells 1094': '',
+'Spells 1095': '',
+'Spells 1096': '',
+'Spells 1097': '',
+'Spells 1098': '',
+'Spells 1099': '',
+'SlotsTotal 26': '',
+'SlotsRemaining 26': '',
+'Spells 10101': '',
+'Spells 10100': '',
+'Spells 10102': '',
+'Spells 10103': '',
+'Spells 10104': '',
+'Spells 10105': '',
+'Spells 10106': '',
+'SlotsTotal 27': '',
+'SlotsRemaining 27': '',
+'Spells 10108': '',
+'Spells 10107': '',
+'Spells 10109': '',
+'Spells 101010': '',
+'Spells 101011': '',
+'Spells 101012': '',
+'Spells 101013': ''
 }
 
 if __name__ == '__main__':
